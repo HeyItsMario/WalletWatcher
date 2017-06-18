@@ -12,7 +12,10 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let bgController = BudgetController(context: context)
+        print(bgController)
+
     }
 
 
