@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6B5FA191EF6FFF10021BB01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B5FA181EF6FFF10021BB01 /* AppDelegate.swift */; };
-		A6B5FA1B1EF6FFF10021BB01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B5FA1A1EF6FFF10021BB01 /* ViewController.swift */; };
+		A6B5FA1B1EF6FFF10021BB01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B5FA1A1EF6FFF10021BB01 /* MainViewController.swift */; };
 		A6B5FA1E1EF6FFF10021BB01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B5FA1C1EF6FFF10021BB01 /* Main.storyboard */; };
 		A6B5FA211EF6FFF10021BB01 /* WalletWatcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6B5FA1F1EF6FFF10021BB01 /* WalletWatcher.xcdatamodeld */; };
 		A6B5FA231EF6FFF10021BB01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B5FA221EF6FFF10021BB01 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		A6B5FA151EF6FFF10021BB01 /* WalletWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B5FA181EF6FFF10021BB01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6B5FA1A1EF6FFF10021BB01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6B5FA1A1EF6FFF10021BB01 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A6B5FA1D1EF6FFF10021BB01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6B5FA201EF6FFF10021BB01 /* WalletWatcher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalletWatcher.xcdatamodel; sourceTree = "<group>"; };
 		A6B5FA221EF6FFF10021BB01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				A6B5FA181EF6FFF10021BB01 /* AppDelegate.swift */,
-				A6B5FA1A1EF6FFF10021BB01 /* ViewController.swift */,
+				A6B5FA1A1EF6FFF10021BB01 /* MainViewController.swift */,
 				A6B5FA1C1EF6FFF10021BB01 /* Main.storyboard */,
 				A6B5FA221EF6FFF10021BB01 /* Assets.xcassets */,
 				A6B5FA241EF6FFF10021BB01 /* LaunchScreen.storyboard */,
@@ -140,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B5FA1B1EF6FFF10021BB01 /* ViewController.swift in Sources */,
+				A6B5FA1B1EF6FFF10021BB01 /* MainViewController.swift in Sources */,
 				A6B5FA211EF6FFF10021BB01 /* WalletWatcher.xcdatamodeld in Sources */,
 				A6B5FA191EF6FFF10021BB01 /* AppDelegate.swift in Sources */,
 			);

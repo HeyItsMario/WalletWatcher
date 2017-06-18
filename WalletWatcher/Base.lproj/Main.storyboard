@@ -1,26 +1,107 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p4J-py-QdF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Wallets-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MainViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="fQd-cs-eEZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="NHm-dS-UN4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="vjh-ym-Hog">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-th-hNd">
+                                <rect key="frame" x="16" y="64" width="343" height="453"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-YG-eTp">
+                                <rect key="frame" x="209" y="552" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="AZl-QG-d41"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="B2y-FF-eBV"/>
+                                    <constraint firstAttribute="height" constant="50" id="w10-as-l14"/>
+                                </constraints>
+                                <state key="normal" title="Create Wallet"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aW-hb-EYk">
+                                <rect key="frame" x="16" y="552" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="LfG-hf-J5u"/>
+                                    <constraint firstAttribute="height" constant="50" id="le6-yA-Tse"/>
+                                </constraints>
+                                <state key="normal" title="Add Income"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fU1-th-hNd" firstAttribute="trailing" secondItem="vjh-ym-Hog" secondAttribute="trailingMargin" id="4ys-tC-Hrj"/>
+                            <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="fU1-th-hNd" secondAttribute="bottom" constant="150" id="6NY-FY-wzH"/>
+                            <constraint firstItem="fU1-th-hNd" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leadingMargin" id="JHZ-sb-RYr"/>
+                            <constraint firstItem="0r9-YG-eTp" firstAttribute="baseline" secondItem="2aW-hb-EYk" secondAttribute="baseline" id="azh-b6-jsI"/>
+                            <constraint firstItem="fU1-th-hNd" firstAttribute="top" secondItem="fQd-cs-eEZ" secondAttribute="bottom" id="eMP-sf-gEw"/>
+                            <constraint firstItem="0r9-YG-eTp" firstAttribute="leading" secondItem="2aW-hb-EYk" secondAttribute="trailing" constant="43" id="sgV-LS-Saw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0r9-YG-eTp" secondAttribute="trailing" id="vAj-1x-8A2"/>
+                            <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="0r9-YG-eTp" secondAttribute="bottom" constant="65" id="y2V-QS-CeZ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Wallets" id="QKd-su-m4y">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="177-hp-zeM">
+                            <view key="customView" contentMode="scaleToFill" id="eCI-wc-Djx">
+                                <rect key="frame" x="276" y="5" width="83" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixb-UH-9vY">
+                                        <rect key="frame" x="-9" y="6" width="100" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="j8T-Vx-Zgl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ixb-UH-9vY" firstAttribute="centerY" secondItem="eCI-wc-Djx" secondAttribute="centerY" id="EfZ-a3-5T8"/>
+                                    <constraint firstItem="Ixb-UH-9vY" firstAttribute="centerX" secondItem="eCI-wc-Djx" secondAttribute="centerX" id="Ffj-3K-1Lt"/>
+                                </constraints>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="781.60000000000002" y="777.66116941529242"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CJJ-0g-pbr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p4J-py-QdF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tOl-zw-TMb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hYW-C7-iz7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AMg-7b-maI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="777.66116941529242"/>
         </scene>
     </scenes>
 </document>
