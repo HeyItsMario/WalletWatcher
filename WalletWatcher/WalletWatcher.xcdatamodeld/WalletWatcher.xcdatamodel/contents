@@ -10,7 +10,6 @@
         <attribute name="totalBudget" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="itsExpenses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" syncable="YES"/>
     </entity>
-    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="cost" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,6 +19,5 @@
         <element name="BudgetController" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Budgets" positionX="-54" positionY="-9" width="128" height="90"/>
         <element name="Expense" positionX="-36" positionY="9" width="128" height="90"/>
-        <element name="Entity" positionX="-45" positionY="18" width="128" height="45"/>
     </elements>
 </model>

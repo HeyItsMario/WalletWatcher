@@ -84,7 +84,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="walletTableView" destination="fU1-th-hNd" id="lIo-iq-sji"/>
                         <segue destination="COw-Ax-z8g" kind="show" identifier="walletSegue" id="DbL-jA-658"/>
                     </connections>
                 </viewController>
