@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0121057D1EF884B0005D6DD7 /* CreateExpenseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0121057C1EF884B0005D6DD7 /* CreateExpenseModalViewController.swift */; };
 		A68C58E91EF70AB200FCCD86 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C58E81EF70AB200FCCD86 /* WalletViewController.swift */; };
 		A68C58EB1EF715F900FCCD86 /* BudgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C58EA1EF715F900FCCD86 /* BudgetController.swift */; };
-		A68C58ED1EF731C600FCCD86 /* CreateExpenseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C58EC1EF731C600FCCD86 /* CreateExpenseModalViewController.swift */; };
+		A68C58ED1EF731C600FCCD86 /* CreateBudgetModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C58EC1EF731C600FCCD86 /* CreateBudgetModalViewController.swift */; };
 		A6B5FA191EF6FFF10021BB01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B5FA181EF6FFF10021BB01 /* AppDelegate.swift */; };
 		A6B5FA1B1EF6FFF10021BB01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B5FA1A1EF6FFF10021BB01 /* MainViewController.swift */; };
 		A6B5FA1E1EF6FFF10021BB01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6B5FA1C1EF6FFF10021BB01 /* Main.storyboard */; };
@@ -19,9 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0121057C1EF884B0005D6DD7 /* CreateExpenseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateExpenseModalViewController.swift; path = ../CreateExpenseModalViewController.swift; sourceTree = "<group>"; };
 		A68C58E81EF70AB200FCCD86 /* WalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		A68C58EA1EF715F900FCCD86 /* BudgetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetController.swift; path = ../BudgetController.swift; sourceTree = "<group>"; };
-		A68C58EC1EF731C600FCCD86 /* CreateExpenseModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateExpenseModalViewController.swift; path = ../CreateExpenseModalViewController.swift; sourceTree = "<group>"; };
+		A68C58EC1EF731C600FCCD86 /* CreateBudgetModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateBudgetModalViewController.swift; path = ../CreateBudgetModalViewController.swift; sourceTree = "<group>"; };
 		A6B5FA151EF6FFF10021BB01 /* WalletWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalletWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B5FA181EF6FFF10021BB01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6B5FA1A1EF6FFF10021BB01 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				A6B5FA181EF6FFF10021BB01 /* AppDelegate.swift */,
-				A68C58EC1EF731C600FCCD86 /* CreateExpenseModalViewController.swift */,
+				0121057C1EF884B0005D6DD7 /* CreateExpenseModalViewController.swift */,
+				A68C58EC1EF731C600FCCD86 /* CreateBudgetModalViewController.swift */,
 				A68C58EA1EF715F900FCCD86 /* BudgetController.swift */,
 				A68C58E81EF70AB200FCCD86 /* WalletViewController.swift */,
 				A6B5FA1A1EF6FFF10021BB01 /* MainViewController.swift */,
@@ -152,8 +155,9 @@
 				A6B5FA1B1EF6FFF10021BB01 /* MainViewController.swift in Sources */,
 				A68C58E91EF70AB200FCCD86 /* WalletViewController.swift in Sources */,
 				A6B5FA211EF6FFF10021BB01 /* WalletWatcher.xcdatamodeld in Sources */,
-				A68C58ED1EF731C600FCCD86 /* CreateExpenseModalViewController.swift in Sources */,
+				A68C58ED1EF731C600FCCD86 /* CreateBudgetModalViewController.swift in Sources */,
 				A68C58EB1EF715F900FCCD86 /* BudgetController.swift in Sources */,
+				0121057D1EF884B0005D6DD7 /* CreateExpenseModalViewController.swift in Sources */,
 				A6B5FA191EF6FFF10021BB01 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,13 +33,11 @@ import Foundation
 //struct Budget {
 //
 //    var totalBudget:Int = 0
-//    var expenses:[String:Expense] = []
+//    var expenses:[Expense] = []
 //    
 //    mutating func addExpense(_ cost: Decimal, _ store: String, _ desc: String) {
 //        
 //        //let newExpense = Expense(cost, store, desc)
-//        
-//        
 //        
 //    }
 //    

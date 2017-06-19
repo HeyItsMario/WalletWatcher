@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="BudgetController" representedClassName="BudgetController" syncable="YES" codeGenerationType="class">
-        <attribute name="myBudgets" optional="YES" attributeType="Transformable" syncable="YES"/>
+    <entity name="Budget" representedClassName="Budget" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="totalIncome" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="itsBudgets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Budgets" syncable="YES"/>
-    </entity>
-    <entity name="Budgets" representedClassName="Budgets" syncable="YES" codeGenerationType="class">
-        <attribute name="expenses" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="totalBudget" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="itsExpenses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" syncable="YES"/>
+        <relationship name="expense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="budget" inverseEntity="Expense" syncable="YES"/>
     </entity>
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="cost" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="store" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="budget" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Budget" inverseName="expense" inverseEntity="Budget" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BudgetController" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Budgets" positionX="-54" positionY="-9" width="128" height="90"/>
-        <element name="Expense" positionX="-36" positionY="9" width="128" height="90"/>
+        <element name="Budget" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Expense" positionX="162" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
