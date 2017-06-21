@@ -47,8 +47,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! WalletViewController
-        nextVC.budget = sender as? Budget
+        
+        if segue.identifier == "walletSegue" {
+            let nextVC = segue.destination as! WalletViewController
+            nextVC.budget = sender as? Budget
+        }
+        
+        
     }
     
 
