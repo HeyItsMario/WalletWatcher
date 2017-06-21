@@ -25,6 +25,10 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        walletTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (budget?.expense?.count)!
     }
