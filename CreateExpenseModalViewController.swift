@@ -28,6 +28,7 @@ class CreateExpenseModalViewController: UIViewController {
         expense.store = storeField.text
         expense.desc = descriptionField.text
         budget?.addToExpense(expense)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         self.dismiss(animated: true, completion: nil)
     }
 
