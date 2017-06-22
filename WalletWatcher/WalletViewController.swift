@@ -35,8 +35,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        let myArray = Array((budget?.expense)!)
-        cell.textLabel?.text = (myArray[indexPath.row] as! Expense).store
+        cell.textLabel?.text = (budget?.expense?[indexPath.row] as! Expense).store
         return cell
     }
     

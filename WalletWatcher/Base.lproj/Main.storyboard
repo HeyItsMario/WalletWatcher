@@ -30,10 +30,17 @@
                                 <rect key="frame" x="209" y="552" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="AZl-QG-d41"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="B2y-FF-eBV"/>
                                     <constraint firstAttribute="height" constant="50" id="w10-as-l14"/>
                                 </constraints>
                                 <state key="normal" title="Create Wallet"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="cES-MY-nA6" kind="presentation" identifier="createWalletModal" id="4nt-XW-VbE"/>
                                 </connections>
@@ -45,6 +52,14 @@
                                     <constraint firstAttribute="height" constant="50" id="le6-yA-Tse"/>
                                 </constraints>
                                 <state key="normal" title="Add Income"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
