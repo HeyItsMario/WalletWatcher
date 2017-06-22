@@ -32,7 +32,7 @@ class CreateBudgetModalViewController: UIViewController {
     }
 
     @IBAction func cancelTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

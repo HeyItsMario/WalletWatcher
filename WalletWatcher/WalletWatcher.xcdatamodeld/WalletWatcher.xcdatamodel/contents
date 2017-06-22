@@ -3,13 +3,13 @@
     <entity name="Budget" representedClassName="Budget" syncable="YES" codeGenerationType="class">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="totalIncome" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="expense" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Expense" inverseName="budget" inverseEntity="Expense" syncable="YES"/>
+        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Expense" inverseName="budget" inverseEntity="Expense" syncable="YES"/>
     </entity>
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="cost" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="store" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="budget" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Budget" inverseName="expense" inverseEntity="Budget" syncable="YES"/>
+        <relationship name="budget" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Budget" inverseName="expenses" inverseEntity="Budget" syncable="YES"/>
     </entity>
     <elements>
         <element name="Budget" positionX="-63" positionY="-18" width="128" height="88"/>
