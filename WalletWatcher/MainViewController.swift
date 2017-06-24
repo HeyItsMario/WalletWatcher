@@ -14,6 +14,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     @IBOutlet weak var budgetTableView: UITableView!
+    @IBOutlet var mainIncome: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         budgetController.fetchBudgets()
         budgetTableView.reloadData()
+        mainIncome.text = String(describing: (budgetController.totalIncome?.total)!)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p4J-py-QdF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p4J-py-QdF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -93,7 +93,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Ixb-UH-9vY" firstAttribute="centerY" secondItem="eCI-wc-Djx" secondAttribute="centerY" id="EfZ-a3-5T8"/>
                                     <constraint firstItem="Ixb-UH-9vY" firstAttribute="centerX" secondItem="eCI-wc-Djx" secondAttribute="centerX" id="Ffj-3K-1Lt"/>
@@ -103,6 +103,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="budgetTableView" destination="fU1-th-hNd" id="Kyd-av-Ufb"/>
+                        <outlet property="mainIncome" destination="Ixb-UH-9vY" id="Vv0-Yq-wbd"/>
                         <segue destination="COw-Ax-z8g" kind="show" identifier="walletSegue" id="DbL-jA-658"/>
                     </connections>
                 </viewController>
@@ -186,7 +187,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Zff-66-aHQ" firstAttribute="bottom" secondItem="3ui-UT-Us6" secondAttribute="bottomMargin" id="iuC-7S-m1a"/>
                                     <constraint firstItem="Zff-66-aHQ" firstAttribute="centerX" secondItem="3ui-UT-Us6" secondAttribute="centerX" id="jmt-LW-eYx"/>
@@ -452,6 +453,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YJU-Br-BP1"/>
+        <segue reference="8Fp-KT-dbW"/>
     </inferredMetricsTieBreakers>
 </document>

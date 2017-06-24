@@ -47,11 +47,9 @@ class BudgetController {
     }
     
     func addIncome(amount: Decimal) {
-        print(totalIncome?.total!)
         let newIncome = (totalIncome?.total?.doubleValue)! + (amount as NSDecimalNumber).doubleValue
         let decimalIncome = Decimal(newIncome)
         totalIncome?.total! = NSDecimalNumber(decimal: decimalIncome)
-        print(totalIncome?.total!)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
 

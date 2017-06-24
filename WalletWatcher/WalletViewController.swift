@@ -20,7 +20,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         walletTableView.delegate = self
         walletTableView.dataSource = self
-        budgetLabel.title = budget?.title
+        budgetLabel.title = "\((budget?.title)!) Wallet"
         incomeLabel.text = String(describing: (budget?.totalIncome)!)
         
     }
