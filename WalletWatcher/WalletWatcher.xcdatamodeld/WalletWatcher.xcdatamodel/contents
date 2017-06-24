@@ -11,8 +11,12 @@
         <attribute name="store" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="budget" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Budget" inverseName="expenses" inverseEntity="Budget" syncable="YES"/>
     </entity>
+    <entity name="Income" representedClassName="Income" syncable="YES" codeGenerationType="class">
+        <attribute name="total" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Budget" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="Expense" positionX="162" positionY="-18" width="128" height="103"/>
+        <element name="Expense" positionX="162" positionY="-18" width="128" height="105"/>
+        <element name="Income" positionX="54" positionY="18" width="128" height="60"/>
     </elements>
 </model>

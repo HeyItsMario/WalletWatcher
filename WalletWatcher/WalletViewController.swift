@@ -30,12 +30,12 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (budget?.expense?.count)!
+        return (budget?.expenses?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = (budget?.expense?[indexPath.row] as! Expense).store
+        cell.textLabel?.text = (budget?.expenses?[indexPath.row] as! Expense).store
         return cell
     }
     

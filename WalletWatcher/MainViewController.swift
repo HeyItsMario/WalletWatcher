@@ -10,7 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var budgets: [Budget] = []
+    var budgetController = BudgetController()
+    
     
     @IBOutlet weak var budgetTableView: UITableView!
     
@@ -22,27 +23,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = budgets[indexPath.row].title
+        cell.textLabel?.text = budgetController.budgets[indexPath.row].title
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return budgets.count
+        return budgetController.budgets.count
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        do {
-            budgets = try context.fetch(Budget.fetchRequest())
-            budgetTableView.reloadData()
-            
-        } catch {
-            print("Error fetching Budgets")
-        }
+        budgetController.fetchBudgets()
+        budgetTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let budget = budgets[indexPath.row]
+        let budget = budgetController.budgets[indexPath.row]
         performSegue(withIdentifier: "walletSegue", sender: budget)
     }
     
@@ -51,6 +46,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if segue.identifier == "walletSegue" {
             let nextVC = segue.destination as! WalletViewController
             nextVC.budget = sender as? Budget
+        }
+        
+        if segue.identifier == "addIncomeSegue" {
+            let nextVC = segue.destination as! AddIncomeViewController
+            nextVC.budgetController = budgetController
         }
         
         

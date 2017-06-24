@@ -27,7 +27,7 @@ class CreateExpenseModalViewController: UIViewController {
         expense.cost = Decimal(string: costField.text!) as NSDecimalNumber?
         expense.store = storeField.text
         expense.desc = descriptionField.text
-        budget?.addToExpense(expense)
+        budget?.addToExpenses(expense)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         self.dismiss(animated: true, completion: nil)
     }

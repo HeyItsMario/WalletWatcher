@@ -60,6 +60,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="TQz-dI-74o" kind="presentation" identifier="addIncomeSegue" id="YJU-Br-BP1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,6 +148,9 @@
                                         <rect key="frame" x="0.0" y="506" width="150" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Add Income"/>
+                                        <connections>
+                                            <segue destination="TQz-dI-74o" kind="presentation" id="8Fp-KT-dbW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -197,6 +203,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kcn-Ld-DaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1528.8" y="777.66116941529242"/>
+        </scene>
+        <!--Add Income View Controller-->
+        <scene sceneID="bf8-X8-8XU">
+            <objects>
+                <viewController id="TQz-dI-74o" customClass="AddIncomeViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dEV-NF-kBK"/>
+                        <viewControllerLayoutGuide type="bottom" id="lnn-d8-lxM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qix-3c-Nwa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Income:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHW-xw-z6e">
+                                <rect key="frame" x="75" y="144" width="96" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkR-Z5-cNQ">
+                                <rect key="frame" x="190" y="146" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6Q-MK-eat">
+                                <rect key="frame" x="100" y="243" width="54" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="X2s-Jp-5jh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlS-1G-p3r">
+                                <rect key="frame" x="233" y="243" width="54" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="enterTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="r5n-2A-kMV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="incomeTextField" destination="PkR-Z5-cNQ" id="rGH-1c-5Gy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1e0-0n-pSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168.8" y="2310.4947526236883"/>
         </scene>
         <!--Create Budget Modal View Controller-->
         <scene sceneID="T8c-Yf-l1V">
@@ -392,4 +451,7 @@
             <point key="canvasLocation" x="116" y="777.66116941529242"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YJU-Br-BP1"/>
+    </inferredMetricsTieBreakers>
 </document>
