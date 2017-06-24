@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var budgetController = BudgetController()
+    var budgetController = BudgetController.sharedInstance
     
     
     @IBOutlet weak var budgetTableView: UITableView!
@@ -35,7 +35,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         budgetController.fetchBudgets()
         budgetTableView.reloadData()
-        mainIncome.text = String(describing: (budgetController.totalIncome?.total)!)
+        let formatter = NumberFormatter()
+        let income = (budgetController.totalIncome?.total)!
+        formatter.numberStyle = .currency
+        mainIncome.text = formatter.string(from: income)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -53,6 +56,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if segue.identifier == "addIncomeSegue" {
             let nextVC = segue.destination as! AddIncomeViewController
             nextVC.budgetController = budgetController
+            nextVC.fromSegue = "mainIncome"
         }
         
         

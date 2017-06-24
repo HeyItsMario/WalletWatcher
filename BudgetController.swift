@@ -9,16 +9,19 @@
 import Foundation
 import UIKit
 
-class BudgetController {
+final class BudgetController {
 
     var totalIncome:Income?
     var budgets: [Budget] = []
     
     
-    init() {
+    private init() {
         fetchIncome()
         fetchBudgets()
     }
+    
+    static let sharedInstance = BudgetController()
+    
     
     func fetchIncome() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -51,6 +54,40 @@ class BudgetController {
         let decimalIncome = Decimal(newIncome)
         totalIncome?.total! = NSDecimalNumber(decimal: decimalIncome)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
+    func addBudgetIncome(amount: Decimal, budget: Budget) {
+        let wallet: Budget?
+        let newIncome: Double
+        let decimalIncome: Decimal
+        
+        if let i = budgets.index(where: {$0 == budget}) {
+            wallet = budgets[i]
+            newIncome = (wallet?.totalIncome?.doubleValue)! + (amount as NSDecimalNumber).doubleValue
+            decimalIncome = Decimal(newIncome)
+            wallet?.totalIncome = NSDecimalNumber(decimal: decimalIncome)
+            print("New budget income: \((wallet?.totalIncome)!)")
+        }
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+    }
+    
+    func addExpense(amount: Decimal, store: String, description: String, budget: Budget) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let expense = Expense(context: context)
+        expense.cost = amount as NSDecimalNumber
+        expense.store = store
+        expense.desc = description
+        
+        if let i = budgets.index(where: { $0 == budget }) {
+            budgets[i].addToExpenses(expense)
+        } else {
+            print("Error cannot find Budget in the Budget array")
+        }
+       
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    
     }
 
 

@@ -15,6 +15,7 @@ class CreateExpenseModalViewController: UIViewController {
     @IBOutlet weak var descriptionField: UITextField!
     
     var budget: Budget? = nil
+    var budgetController = BudgetController.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +23,8 @@ class CreateExpenseModalViewController: UIViewController {
     }
 
     @IBAction func enterTapped(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let expense = Expense(context: context)
-        expense.cost = Decimal(string: costField.text!) as NSDecimalNumber?
-        expense.store = storeField.text
-        expense.desc = descriptionField.text
-        budget?.addToExpenses(expense)
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        let cost = Decimal(string: costField.text!)
+        budgetController.addExpense(amount: cost!, store: storeField.text!, description: descriptionField.text!, budget: budget!)
         self.dismiss(animated: true, completion: nil)
     }
 

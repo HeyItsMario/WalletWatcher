@@ -11,6 +11,7 @@ import UIKit
 class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var budget: Budget? = nil
+    var budgetController = BudgetController.sharedInstance
     
     @IBOutlet weak var budgetLabel: UINavigationItem!
     @IBOutlet weak var incomeLabel: UILabel!
@@ -20,13 +21,15 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         walletTableView.delegate = self
         walletTableView.dataSource = self
-        budgetLabel.title = "\((budget?.title)!) Wallet"
-        incomeLabel.text = String(describing: (budget?.totalIncome)!)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         walletTableView.reloadData()
+        budgetLabel.title = "\((budget?.title)!) Wallet"
+        let formatter = NumberFormatter()
+        let income = (budget?.totalIncome)!
+        formatter.numberStyle = .currency
+        incomeLabel.text = formatter.string(from: income)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,8 +43,19 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextVC = segue.destination as! CreateExpenseModalViewController
-        nextVC.budget = budget
+        
+        if segue.identifier == "expenseSegue" {
+            let nextVC = segue.destination as! CreateExpenseModalViewController
+            nextVC.budget = budget
+        }
+        
+        if segue.identifier == "addIncomeSegue" {
+            print("blah blah")
+            let nextVC = segue.destination as! AddIncomeViewController
+            nextVC.budget = budget
+            nextVC.fromSegue = "walletIncome"
+        }
+        
     }
 
 
