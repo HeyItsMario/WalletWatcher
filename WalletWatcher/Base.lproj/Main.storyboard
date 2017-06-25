@@ -150,7 +150,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Add Income"/>
                                         <connections>
-                                            <segue destination="TQz-dI-74o" kind="presentation" id="8Fp-KT-dbW"/>
+                                            <segue destination="TQz-dI-74o" kind="presentation" identifier="addIncomeSegue" id="8Fp-KT-dbW"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -27,16 +27,14 @@ class AddIncomeViewController: UIViewController {
     
     
     @IBAction func enterTapped(_ sender: Any) {
-        print("test tetst etst")
+
         // Adding income from the main view which means it adds to total income
         if fromSegue == "mainIncome" {
-            print("insinde main income r")
             budgetController.addIncome(amount: Decimal(string: incomeTextField.text!)!)
         }
         
         // Adding income from the wallet view which means it adds to the budget's total
         if fromSegue == "walletIncome" {
-            print("Running inside here")
             budgetController.addBudgetIncome(amount: Decimal(string: incomeTextField.text!)!, budget: budget!)
         }
         
