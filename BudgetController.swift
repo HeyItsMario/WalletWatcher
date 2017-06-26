@@ -66,7 +66,6 @@ final class BudgetController {
             newIncome = (wallet?.totalIncome?.doubleValue)! + (amount as NSDecimalNumber).doubleValue
             decimalIncome = Decimal(newIncome)
             wallet?.totalIncome = NSDecimalNumber(decimal: decimalIncome)
-            print("New budget income: \((wallet?.totalIncome)!)")
         }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -82,6 +81,8 @@ final class BudgetController {
         
         if let i = budgets.index(where: { $0 == budget }) {
             budgets[i].addToExpenses(expense)
+            budgets[i].totalIncome = NSDecimalNumber( value: (budgets[i].totalIncome?.doubleValue)! - (amount as NSDecimalNumber).doubleValue )
+            totalIncome?.total = NSDecimalNumber( value: (totalIncome?.total?.doubleValue)! - (amount as NSDecimalNumber).doubleValue )
         } else {
             print("Error cannot find Budget in the Budget array")
         }

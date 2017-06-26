@@ -208,48 +208,61 @@
         <!--Add Income View Controller-->
         <scene sceneID="bf8-X8-8XU">
             <objects>
-                <viewController id="TQz-dI-74o" customClass="AddIncomeViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="TQz-dI-74o" customClass="AddIncomeViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dEV-NF-kBK"/>
                         <viewControllerLayoutGuide type="bottom" id="lnn-d8-lxM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qix-3c-Nwa">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Qix-3c-Nwa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Income:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHW-xw-z6e">
-                                <rect key="frame" x="75" y="144" width="96" height="35"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYY-4W-dr7">
+                                <rect key="frame" x="24" y="131" width="327" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkR-Z5-cNQ">
-                                <rect key="frame" x="190" y="146" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6Q-MK-eat">
-                                <rect key="frame" x="100" y="243" width="54" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="X2s-Jp-5jh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlS-1G-p3r">
-                                <rect key="frame" x="233" y="243" width="54" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Enter"/>
-                                <connections>
-                                    <action selector="enterTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="r5n-2A-kMV"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Income:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHW-xw-z6e">
+                                        <rect key="frame" x="72" y="46" width="96" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlS-1G-p3r">
+                                        <rect key="frame" x="226" y="123" width="54" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Enter"/>
+                                        <connections>
+                                            <action selector="enterTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="r5n-2A-kMV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6Q-MK-eat">
+                                        <rect key="frame" x="81" y="123" width="54" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="X2s-Jp-5jh"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkR-Z5-cNQ">
+                                        <rect key="frame" x="183" y="48" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.56958642003461712" green="0.72336632013320923" blue="0.56553210992857561" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
                     <connections>
                         <outlet property="incomeTextField" destination="PkR-Z5-cNQ" id="rGH-1c-5Gy"/>
                     </connections>
@@ -261,12 +274,12 @@
         <!--Create Budget Modal View Controller-->
         <scene sceneID="T8c-Yf-l1V">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" id="cES-MY-nA6" customClass="CreateBudgetModalViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="cES-MY-nA6" customClass="CreateBudgetModalViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xgf-AR-gy7"/>
                         <viewControllerLayoutGuide type="bottom" id="OPM-oP-sMe"/>
                     </layoutGuides>
-                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Z9m-Kj-Qn3">
+                    <view key="view" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Z9m-Kj-Qn3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -321,7 +334,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KXO-zb-4zr" firstAttribute="leading" secondItem="NqQ-7s-OCk" secondAttribute="trailing" constant="51" id="3MA-cp-QWu"/>
                             <constraint firstItem="Mzg-wn-YTg" firstAttribute="centerX" secondItem="KXO-zb-4zr" secondAttribute="centerX" constant="-2.5" id="510-6E-vW4"/>
@@ -353,12 +366,12 @@
         <!--Create Expense Modal View Controller-->
         <scene sceneID="jMl-aA-Fi3">
             <objects>
-                <viewController id="P8t-OV-zu7" customClass="CreateExpenseModalViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="P8t-OV-zu7" customClass="CreateExpenseModalViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2R3-yz-js6"/>
                         <viewControllerLayoutGuide type="bottom" id="r0w-Zt-Ebd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ghE-4K-1Ba">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="ghE-4K-1Ba">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -421,7 +434,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="costField" destination="Vyv-Iv-ST5" id="TBF-Ac-LXB"/>

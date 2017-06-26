@@ -43,8 +43,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare for segue")
-        print(segue.identifier!)
+        
         if segue.identifier == "expenseSegue" {
             let nextVC = segue.destination as! CreateExpenseModalViewController
             nextVC.budget = budget
