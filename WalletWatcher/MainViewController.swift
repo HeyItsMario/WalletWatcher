@@ -8,10 +8,10 @@
 
 import UIKit
 
+
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var budgetController = BudgetController.sharedInstance
-    
     
     @IBOutlet weak var budgetTableView: UITableView!
     @IBOutlet var mainIncome: UILabel!
@@ -61,7 +61,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
     }
-    
+
 
 
 }

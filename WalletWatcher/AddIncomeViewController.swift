@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class AddIncomeViewController: UIViewController {
     
     @IBOutlet weak var incomeTextField: UITextField!
@@ -27,7 +28,7 @@ class AddIncomeViewController: UIViewController {
     
     
     @IBAction func enterTapped(_ sender: Any) {
-
+        
         // Adding income from the main view which means it adds to total income
         if fromSegue == "mainIncome" {
             budgetController.addIncome(amount: Decimal(string: incomeTextField.text!)!)
@@ -38,10 +39,12 @@ class AddIncomeViewController: UIViewController {
             budgetController.addBudgetIncome(amount: Decimal(string: incomeTextField.text!)!, budget: budget!)
         }
         
+        self.presentingViewController?.viewWillAppear(true)
         self.dismiss(animated: true, completion: nil)
     
     }
     
+
     
     
 }
