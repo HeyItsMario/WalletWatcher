@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -208,7 +210,7 @@
         <!--Add Income View Controller-->
         <scene sceneID="bf8-X8-8XU">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="TQz-dI-74o" customClass="AddIncomeViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="TQz-dI-74o" customClass="AddIncomeViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dEV-NF-kBK"/>
                         <viewControllerLayoutGuide type="bottom" id="lnn-d8-lxM"/>
@@ -217,42 +219,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYY-4W-dr7">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rYY-4W-dr7">
                                 <rect key="frame" x="24" y="131" width="327" height="203"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Income:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHW-xw-z6e">
-                                        <rect key="frame" x="72" y="46" width="96" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Income" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHW-xw-z6e">
+                                        <rect key="frame" x="20" y="46" width="96" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="rOk-AR-ejc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlS-1G-p3r">
-                                        <rect key="frame" x="226" y="123" width="54" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Enter"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlS-1G-p3r">
+                                        <rect key="frame" x="211" y="118" width="96" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="9MR-S5-cMd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Enter">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="enterTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="r5n-2A-kMV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6Q-MK-eat">
-                                        <rect key="frame" x="81" y="123" width="54" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Cancel"/>
-                                        <connections>
-                                            <action selector="cancelTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="X2s-Jp-5jh"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkR-Z5-cNQ">
-                                        <rect key="frame" x="183" y="48" width="97" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkR-Z5-cNQ">
+                                        <rect key="frame" x="131" y="48" width="176" height="25"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6Q-MK-eat">
+                                        <rect key="frame" x="20" y="118" width="96" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="gHI-EC-xXW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="X2s-Jp-5jh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.56958642003461712" green="0.72336632013320923" blue="0.56553210992857561" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.48876494597803888" green="0.60884486401695537" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="lHW-xw-z6e" firstAttribute="centerY" secondItem="PkR-Z5-cNQ" secondAttribute="centerY" id="9F1-Ex-ELx"/>
+                                    <constraint firstItem="GlS-1G-p3r" firstAttribute="top" secondItem="PkR-Z5-cNQ" secondAttribute="bottom" constant="45" id="BYq-RW-D3j"/>
+                                    <constraint firstItem="lHW-xw-z6e" firstAttribute="top" secondItem="rYY-4W-dr7" secondAttribute="top" constant="46" id="J7R-Ro-NZA"/>
+                                    <constraint firstItem="GlS-1G-p3r" firstAttribute="baseline" secondItem="I6Q-MK-eat" secondAttribute="firstBaseline" id="Xs3-tF-ckW"/>
+                                    <constraint firstAttribute="bottom" secondItem="I6Q-MK-eat" secondAttribute="bottom" constant="47" id="aTQ-Eo-mAl"/>
+                                    <constraint firstAttribute="trailing" secondItem="PkR-Z5-cNQ" secondAttribute="trailing" constant="20" id="cLH-sD-NPi"/>
+                                    <constraint firstItem="lHW-xw-z6e" firstAttribute="leading" secondItem="rYY-4W-dr7" secondAttribute="leading" constant="20" id="g0Q-VJ-pxN"/>
+                                    <constraint firstItem="GlS-1G-p3r" firstAttribute="firstBaseline" secondItem="I6Q-MK-eat" secondAttribute="baseline" id="iHA-SH-Rdc"/>
+                                    <constraint firstItem="I6Q-MK-eat" firstAttribute="top" secondItem="lHW-xw-z6e" secondAttribute="bottom" constant="42" id="mPF-84-1M3"/>
+                                    <constraint firstItem="GlS-1G-p3r" firstAttribute="top" secondItem="I6Q-MK-eat" secondAttribute="top" id="nIO-wR-bYk"/>
+                                    <constraint firstItem="GlS-1G-p3r" firstAttribute="trailing" secondItem="PkR-Z5-cNQ" secondAttribute="trailing" id="nne-aF-q84"/>
+                                    <constraint firstItem="PkR-Z5-cNQ" firstAttribute="leading" secondItem="lHW-xw-z6e" secondAttribute="trailing" constant="15" id="rUh-uV-5sw"/>
+                                    <constraint firstItem="I6Q-MK-eat" firstAttribute="leading" secondItem="rYY-4W-dr7" secondAttribute="leading" constant="20" id="svv-Lc-Lie"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
                                         <integer key="value" value="5"/>
@@ -261,6 +288,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rYY-4W-dr7" firstAttribute="top" secondItem="dEV-NF-kBK" secondAttribute="bottom" constant="111" id="3Yz-RS-gmX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rYY-4W-dr7" secondAttribute="trailing" constant="8" id="Azz-B9-cJy"/>
+                            <constraint firstItem="lnn-d8-lxM" firstAttribute="top" secondItem="rYY-4W-dr7" secondAttribute="bottom" constant="333" id="Gk7-aA-4wV"/>
+                            <constraint firstItem="rYY-4W-dr7" firstAttribute="leading" secondItem="Qix-3c-Nwa" secondAttribute="leadingMargin" constant="8" id="IqC-4J-4Ov"/>
+                        </constraints>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
                     <connections>
@@ -366,7 +399,7 @@
         <!--Create Expense Modal View Controller-->
         <scene sceneID="jMl-aA-Fi3">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="P8t-OV-zu7" customClass="CreateExpenseModalViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="P8t-OV-zu7" customClass="CreateExpenseModalViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2R3-yz-js6"/>
                         <viewControllerLayoutGuide type="bottom" id="r0w-Zt-Ebd"/>

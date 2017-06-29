@@ -26,7 +26,7 @@ class CreateBudgetModalViewController: UIViewController {
         budget.title = titleField.text
         budget.totalIncome = Decimal(string: incomeField.text!) as NSDecimalNumber?
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        //self.presentingViewController?.viewWillAppear(true)
+        self.presentingViewController?.viewWillAppear(true)
         self.dismiss(animated: true, completion: nil)
         
     }
