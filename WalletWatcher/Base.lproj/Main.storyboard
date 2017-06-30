@@ -28,32 +28,12 @@
                                 <rect key="frame" x="16" y="64" width="343" height="453"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-YG-eTp">
-                                <rect key="frame" x="209" y="552" width="150" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="AZl-QG-d41"/>
-                                    <constraint firstAttribute="height" constant="50" id="w10-as-l14"/>
-                                </constraints>
-                                <state key="normal" title="Create Wallet"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="cES-MY-nA6" kind="presentation" identifier="createWalletModal" id="4nt-XW-VbE"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aW-hb-EYk">
-                                <rect key="frame" x="16" y="552" width="150" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="LfG-hf-J5u"/>
-                                    <constraint firstAttribute="height" constant="50" id="le6-yA-Tse"/>
-                                </constraints>
-                                <state key="normal" title="Add Income"/>
+                                <rect key="frame" x="36" y="566" width="96" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Add Income">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <integer key="value" value="1"/>
@@ -66,17 +46,36 @@
                                     <segue destination="TQz-dI-74o" kind="presentation" identifier="addIncomeSegue" id="YJU-Br-BP1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-YG-eTp">
+                                <rect key="frame" x="234" y="566" width="105" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Create Wallet">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="cES-MY-nA6" kind="presentation" identifier="createWalletModal" id="4nt-XW-VbE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fU1-th-hNd" firstAttribute="trailing" secondItem="vjh-ym-Hog" secondAttribute="trailingMargin" id="4ys-tC-Hrj"/>
                             <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="fU1-th-hNd" secondAttribute="bottom" constant="150" id="6NY-FY-wzH"/>
+                            <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="0r9-YG-eTp" secondAttribute="bottom" constant="65" id="DUv-2O-yPh"/>
                             <constraint firstItem="fU1-th-hNd" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leadingMargin" id="JHZ-sb-RYr"/>
-                            <constraint firstItem="0r9-YG-eTp" firstAttribute="baseline" secondItem="2aW-hb-EYk" secondAttribute="baseline" id="azh-b6-jsI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0r9-YG-eTp" secondAttribute="trailing" constant="20" id="Tuu-VV-wjx"/>
+                            <constraint firstItem="2aW-hb-EYk" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leadingMargin" constant="20" id="c9y-At-Xxj"/>
                             <constraint firstItem="fU1-th-hNd" firstAttribute="top" secondItem="fQd-cs-eEZ" secondAttribute="bottom" id="eMP-sf-gEw"/>
-                            <constraint firstItem="0r9-YG-eTp" firstAttribute="leading" secondItem="2aW-hb-EYk" secondAttribute="trailing" constant="43" id="sgV-LS-Saw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0r9-YG-eTp" secondAttribute="trailing" id="vAj-1x-8A2"/>
-                            <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="0r9-YG-eTp" secondAttribute="bottom" constant="65" id="y2V-QS-CeZ"/>
+                            <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="2aW-hb-EYk" secondAttribute="bottom" constant="65" id="nlL-7U-2Po"/>
+                            <constraint firstItem="0r9-YG-eTp" firstAttribute="leading" secondItem="2aW-hb-EYk" secondAttribute="trailing" constant="102" id="x5y-mx-zc3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wallets" id="QKd-su-m4y">
@@ -505,6 +504,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Fp-KT-dbW"/>
+        <segue reference="YJU-Br-BP1"/>
     </inferredMetricsTieBreakers>
 </document>
