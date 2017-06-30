@@ -9,7 +9,7 @@
 import UIKit
 
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ButtonDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var budgetController = BudgetController.sharedInstance
     
@@ -51,20 +51,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if segue.identifier == "walletSegue" {
             let nextVC = segue.destination as! WalletViewController
             nextVC.budget = sender as? Budget
+
         }
         
         if segue.identifier == "addIncomeSegue" {
             let nextVC = segue.destination as! AddIncomeViewController
             nextVC.budgetController = budgetController
             nextVC.fromSegue = "mainIncome"
-            nextVC.delegate = self
+
         }
         
         
     }
     
-    func userDidTapButton() {
-        budgetTableView.reloadData()
+
+    
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
         let formatter = NumberFormatter()
         let income = (budgetController.totalIncome?.total)!
         formatter.numberStyle = .currency

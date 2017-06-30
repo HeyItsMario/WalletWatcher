@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol ButtonDelegate {
-    func userDidTapButton()
-}
 
 class AddIncomeViewController: UIViewController {
     
@@ -18,7 +15,7 @@ class AddIncomeViewController: UIViewController {
     var budgetController = BudgetController.sharedInstance
     var budget: Budget? = nil
     var fromSegue:String? = nil
-    var delegate:ButtonDelegate? = nil
+    
     
     
     override func viewDidLoad() {
@@ -43,15 +40,9 @@ class AddIncomeViewController: UIViewController {
             budgetController.addBudgetIncome(amount: Decimal(string: incomeTextField.text!)!, budget: budget!)
         }
         
-        if delegate != nil {
-            print("Inside delegate call")
-            delegate?.userDidTapButton()
-        } else {
-            print("delegate was found to be nil")
-        }
         
+        performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
         
-        self.dismiss(animated: true, completion: nil)
     
     }
     
