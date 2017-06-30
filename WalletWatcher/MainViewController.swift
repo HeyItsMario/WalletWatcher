@@ -64,9 +64,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    @IBAction func unwindToMainViewFromBudgetSegue(segue:UIStoryboardSegue) {
+        print("test 123")
+        budgetController.fetchBudgets()
+        budgetTableView.reloadData()
+    }
+    
 
     
-    @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
+    @IBAction func unwindToMainViewSegue(segue:UIStoryboardSegue) {
         let formatter = NumberFormatter()
         let income = (budgetController.totalIncome?.total)!
         formatter.numberStyle = .currency

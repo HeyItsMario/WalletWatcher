@@ -41,7 +41,7 @@ class AddIncomeViewController: UIViewController {
         }
         
         
-        performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
+        performSegue(withIdentifier: "unwindSegueToMainView", sender: self)
         
     
     }

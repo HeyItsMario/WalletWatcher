@@ -56,6 +56,14 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
     }
+    
+    @IBAction func unwindToWalletView(segue:UIStoryboardSegue) {
+        walletTableView.reloadData()
+        let formatter = NumberFormatter()
+        let income = (budget?.totalIncome)!
+        formatter.numberStyle = .currency
+        incomeLabel.text = formatter.string(from: income)
+    }
 
 
 }

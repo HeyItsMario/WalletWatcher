@@ -298,7 +298,7 @@
                     <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
                     <connections>
                         <outlet property="incomeTextField" destination="PkR-Z5-cNQ" id="rGH-1c-5Gy"/>
-                        <segue destination="rhy-2I-gXG" kind="unwind" identifier="unwindSegueToVC1" unwindAction="unwindToVC1WithSegue:" id="Zah-mD-vZs"/>
+                        <segue destination="rhy-2I-gXG" kind="unwind" identifier="unwindSegueToMainView" unwindAction="unwindToMainViewSegueWithSegue:" id="31S-uL-d8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1e0-0n-pSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,9 +392,11 @@
                     <connections>
                         <outlet property="incomeField" destination="KXO-zb-4zr" id="Rvq-5i-GlN"/>
                         <outlet property="titleField" destination="5cs-r6-qgU" id="2WJ-Cl-YQE"/>
+                        <segue destination="kLq-vw-9aX" kind="unwind" identifier="unwindToMainViewFromBudget" unwindAction="unwindToMainViewFromBudgetSegueWithSegue:" id="PKU-re-DrB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0w-rO-cwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kLq-vw-9aX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="782" y="1566"/>
         </scene>
@@ -475,9 +477,11 @@
                         <outlet property="costField" destination="Vyv-Iv-ST5" id="TBF-Ac-LXB"/>
                         <outlet property="descriptionField" destination="igk-jf-cRH" id="iqv-tG-LCl"/>
                         <outlet property="storeField" destination="fsZ-1x-EGO" id="BHy-v4-uZ9"/>
+                        <segue destination="FsR-v2-FNv" kind="unwind" identifier="unwindToWalletView" unwindAction="unwindToWalletViewWithSegue:" id="hqw-Go-wI1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRG-2p-Ueu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FsR-v2-FNv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1528.8" y="1565.6671664167918"/>
         </scene>

@@ -25,8 +25,9 @@ class CreateExpenseModalViewController: UIViewController {
     @IBAction func enterTapped(_ sender: Any) {
         let cost = Decimal(string: costField.text!)
         budgetController.addExpense(amount: cost!, store: storeField.text!, description: descriptionField.text!, budget: budget!)
-        self.presentingViewController?.viewWillAppear(true)
-        self.dismiss(animated: true, completion: nil)
+        
+        performSegue(withIdentifier: "unwindToWalletView", sender: self)
+        
     }
 
     @IBAction func cancelTapped(_ sender: Any) {
