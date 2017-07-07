@@ -26,10 +26,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         walletTableView.reloadData()
         budgetLabel.title = "\((budget?.title)!) Wallet"
-        let formatter = NumberFormatter()
-        let income = (budget?.totalIncome)!
-        formatter.numberStyle = .currency
-        incomeLabel.text = formatter.string(from: income)
+        refreshBudgetIncomeLabel()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +37,14 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = (budget?.expenses?[indexPath.row] as! Expense).store
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            budgetController.deleteExpense(budget: budget!, expense: budget!.expenses![indexPath.row] as! Expense)
+            walletTableView.reloadData()
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,6 +64,10 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func unwindToWalletView(segue:UIStoryboardSegue) {
         walletTableView.reloadData()
+        refreshBudgetIncomeLabel()
+    }
+    
+    func refreshBudgetIncomeLabel() {
         let formatter = NumberFormatter()
         let income = (budget?.totalIncome)!
         formatter.numberStyle = .currency

@@ -91,8 +91,10 @@ final class BudgetController {
     
     }
     
-    func deleteExpense(budget: Budget) {
-    
+    func deleteExpense(budget: Budget, expense: Expense) {
+        budget.removeFromExpenses(expense)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        fetchBudgets()
     }
     
     func deleteBudget(budget: Budget) {
