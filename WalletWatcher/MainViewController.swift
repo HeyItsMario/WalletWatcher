@@ -35,10 +35,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         budgetController.fetchBudgets()
         budgetTableView.reloadData()
-        let formatter = NumberFormatter()
-        let income = (budgetController.totalIncome?.total)!
-        formatter.numberStyle = .currency
-        mainIncome.text = formatter.string(from: income)
+        refreshMainIncomeLabel()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -64,8 +61,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            budgetController.deleteBudget(budget: budgetController.budgets[indexPath.row])
+            budgetTableView.reloadData()
+            refreshMainIncomeLabel()
+        }
+    }
+    
     @IBAction func unwindToMainViewFromBudgetSegue(segue:UIStoryboardSegue) {
-        print("test 123")
         budgetController.fetchBudgets()
         budgetTableView.reloadData()
     }
@@ -73,6 +77,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     @IBAction func unwindToMainViewSegue(segue:UIStoryboardSegue) {
+        refreshMainIncomeLabel()
+    }
+    
+    func refreshMainIncomeLabel() {
         let formatter = NumberFormatter()
         let income = (budgetController.totalIncome?.total)!
         formatter.numberStyle = .currency
