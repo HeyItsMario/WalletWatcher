@@ -43,7 +43,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if editingStyle == .delete {
             budgetController.deleteExpense(budget: budget!, expense: budget!.expenses![indexPath.row] as! Expense)
             walletTableView.reloadData()
-            
+            refreshBudgetIncomeLabel()
         }
     }
     

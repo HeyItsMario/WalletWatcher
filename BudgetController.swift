@@ -94,12 +94,13 @@ final class BudgetController {
     func deleteExpense(budget: Budget, expense: Expense) {
         budget.removeFromExpenses(expense)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        let amountToAddBack = expense.cost! as Decimal
+        addBudgetIncome(amount: amountToAddBack, budget: budget)
+        addIncome(amount: amountToAddBack)
         fetchBudgets()
     }
     
     func deleteBudget(budget: Budget) {
-        let amountToSubtract = budget.totalIncome! as Decimal
-        addIncome(amount: -amountToSubtract)
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         context.delete(budget)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
