@@ -18,6 +18,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 20)!]
+        budgetTableView.backgroundColor = UIColor.green
+        view.backgroundColor = UIColor.red
         budgetTableView.delegate = self
         budgetTableView.dataSource = self
     }
@@ -33,8 +37,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.barTintColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 20)!]
         budgetController.fetchBudgets()
         budgetTableView.reloadData()
         refreshMainIncomeLabel()
