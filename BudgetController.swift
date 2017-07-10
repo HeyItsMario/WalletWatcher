@@ -68,6 +68,8 @@ final class BudgetController {
             wallet?.totalIncome = NSDecimalNumber(decimal: decimalIncome)
         }
         
+        addIncome(amount: amount)
+        
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
     }

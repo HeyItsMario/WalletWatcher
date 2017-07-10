@@ -29,10 +29,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aW-hb-EYk">
-                                <rect key="frame" x="36" y="566" width="96" height="36"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <rect key="frame" x="36" y="553" width="145" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Q16-cV-KAs"/>
+                                    <constraint firstAttribute="width" constant="145" id="Zth-qb-h16"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Add Income">
-                                    <color key="titleColor" red="0.59999999999999998" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -47,10 +51,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-YG-eTp">
-                                <rect key="frame" x="234" y="566" width="105" height="36"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <rect key="frame" x="194" y="553" width="145" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="9Qn-UP-KCH"/>
+                                    <constraint firstAttribute="height" constant="54" id="he9-tj-G53"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Create Wallet">
-                                    <color key="titleColor" red="0.59999999999999998" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -69,13 +77,15 @@
                         <constraints>
                             <constraint firstItem="fU1-th-hNd" firstAttribute="trailing" secondItem="vjh-ym-Hog" secondAttribute="trailingMargin" id="4ys-tC-Hrj"/>
                             <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="fU1-th-hNd" secondAttribute="bottom" constant="150" id="6NY-FY-wzH"/>
-                            <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="0r9-YG-eTp" secondAttribute="bottom" constant="65" id="DUv-2O-yPh"/>
+                            <constraint firstItem="2aW-hb-EYk" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leadingMargin" constant="20" id="8WB-IC-fea"/>
+                            <constraint firstItem="2aW-hb-EYk" firstAttribute="top" secondItem="0r9-YG-eTp" secondAttribute="top" id="FO7-B9-F2P"/>
                             <constraint firstItem="fU1-th-hNd" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leadingMargin" id="JHZ-sb-RYr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0r9-YG-eTp" secondAttribute="trailing" constant="20" id="Tuu-VV-wjx"/>
-                            <constraint firstItem="2aW-hb-EYk" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leadingMargin" constant="20" id="c9y-At-Xxj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0r9-YG-eTp" secondAttribute="trailing" constant="20" id="PHZ-CG-qcQ"/>
                             <constraint firstItem="fU1-th-hNd" firstAttribute="top" secondItem="fQd-cs-eEZ" secondAttribute="bottom" id="eMP-sf-gEw"/>
-                            <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="2aW-hb-EYk" secondAttribute="bottom" constant="65" id="nlL-7U-2Po"/>
-                            <constraint firstItem="0r9-YG-eTp" firstAttribute="leading" secondItem="2aW-hb-EYk" secondAttribute="trailing" constant="102" id="x5y-mx-zc3"/>
+                            <constraint firstItem="2aW-hb-EYk" firstAttribute="top" secondItem="fU1-th-hNd" secondAttribute="bottom" constant="36" id="h8j-wu-CzU"/>
+                            <constraint firstItem="2aW-hb-EYk" firstAttribute="baseline" secondItem="0r9-YG-eTp" secondAttribute="firstBaseline" id="jaz-bv-7jS"/>
+                            <constraint firstItem="0r9-YG-eTp" firstAttribute="top" secondItem="fU1-th-hNd" secondAttribute="bottom" constant="36" id="tfV-nr-hv7"/>
+                            <constraint firstItem="2aW-hb-EYk" firstAttribute="firstBaseline" secondItem="0r9-YG-eTp" secondAttribute="baseline" id="zRB-GH-jgS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wallets" id="QKd-su-m4y">
@@ -90,7 +100,7 @@
                                             <constraint firstAttribute="width" constant="100" id="j8T-Vx-Zgl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
