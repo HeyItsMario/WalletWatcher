@@ -24,8 +24,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 20)!]
-        budgetTableView.backgroundColor = UIColor.green
-        view.backgroundColor = UIColor.red
+        navigationController?.navigationBar.tintColor = UIColor.white
         budgetTableView.delegate = self
         budgetTableView.dataSource = self
     }
