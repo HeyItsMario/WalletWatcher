@@ -31,6 +31,7 @@
 		01B490601F15846200742726 /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B490491F15846200742726 /* Icon-App-83.5x83.5@2x.png */; };
 		01B490611F15846200742726 /* Icon-Small-50x50@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B4904A1F15846200742726 /* Icon-Small-50x50@1x.png */; };
 		01B490621F15846200742726 /* Icon-Small-50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B4904B1F15846200742726 /* Icon-Small-50x50@2x.png */; };
+		01B490641F16C91000742726 /* ExpenseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B490631F16C91000742726 /* ExpenseDetailViewController.swift */; };
 		01D53B061EFDD4A500EF32E5 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D53B051EFDD4A500EF32E5 /* AddIncomeViewController.swift */; };
 		A68C58E91EF70AB200FCCD86 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C58E81EF70AB200FCCD86 /* WalletViewController.swift */; };
 		A68C58EB1EF715F900FCCD86 /* BudgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C58EA1EF715F900FCCD86 /* BudgetController.swift */; };
@@ -68,6 +69,7 @@
 		01B490491F15846200742726 /* Icon-App-83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-83.5x83.5@2x.png"; sourceTree = "<group>"; };
 		01B4904A1F15846200742726 /* Icon-Small-50x50@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50x50@1x.png"; sourceTree = "<group>"; };
 		01B4904B1F15846200742726 /* Icon-Small-50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50x50@2x.png"; sourceTree = "<group>"; };
+		01B490631F16C91000742726 /* ExpenseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseDetailViewController.swift; sourceTree = "<group>"; };
 		01D53B051EFDD4A500EF32E5 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
 		A68C58E81EF70AB200FCCD86 /* WalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		A68C58EA1EF715F900FCCD86 /* BudgetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BudgetController.swift; path = ../BudgetController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				01D53B051EFDD4A500EF32E5 /* AddIncomeViewController.swift */,
 				0121057C1EF884B0005D6DD7 /* CreateExpenseModalViewController.swift */,
 				A68C58EC1EF731C600FCCD86 /* CreateBudgetModalViewController.swift */,
+				01B490631F16C91000742726 /* ExpenseDetailViewController.swift */,
 				A68C58EA1EF715F900FCCD86 /* BudgetController.swift */,
 				A68C58E81EF70AB200FCCD86 /* WalletViewController.swift */,
 				A6B5FA1A1EF6FFF10021BB01 /* MainViewController.swift */,
@@ -261,6 +264,7 @@
 				01D53B061EFDD4A500EF32E5 /* AddIncomeViewController.swift in Sources */,
 				A68C58ED1EF731C600FCCD86 /* CreateBudgetModalViewController.swift in Sources */,
 				A68C58EB1EF715F900FCCD86 /* BudgetController.swift in Sources */,
+				01B490641F16C91000742726 /* ExpenseDetailViewController.swift in Sources */,
 				0121057D1EF884B0005D6DD7 /* CreateExpenseModalViewController.swift in Sources */,
 				A6B5FA191EF6FFF10021BB01 /* AppDelegate.swift in Sources */,
 			);
