@@ -13,10 +13,13 @@ class ExpenseDetailViewController: UIViewController {
     @IBOutlet weak var storeLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    var expense: Expense? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        storeLabel.text = expense?.store
+        descLabel.text = expense?.desc
+        costLabel.text = "$\((expense?.cost)!)"
     }
 
     @IBAction func dismissTapped(_ sender: Any) {

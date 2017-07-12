@@ -48,21 +48,15 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showExpenseSegue", sender: nil)
+        performSegue(withIdentifier: "showExpenseSegue", sender: budget?.expenses?[indexPath.row])
         walletTableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "expenseSegue" {
-            let nextVC = segue.destination as! CreateExpenseModalViewController
-            nextVC.budget = budget
-        }
-        
-        if segue.identifier == "addIncomeSegue" {
-            let nextVC = segue.destination as! AddIncomeViewController
-            nextVC.budget = budget
-            nextVC.fromSegue = "walletIncome"
+        if segue.identifier == "showExpenseSegue" {
+            let nextVC = segue.destination as! ExpenseDetailViewController
+            nextVC.expense = sender as? Expense
         }
         
     }
