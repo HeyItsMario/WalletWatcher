@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p4J-py-QdF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p4J-py-QdF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -122,6 +122,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="781.60000000000002" y="777.66116941529242"/>
+        </scene>
+        <!--Expense Detail View Controller-->
+        <scene sceneID="0IX-P6-gCC">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="sd5-dN-vhx" customClass="ExpenseDetailViewController" customModule="WalletWatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QXL-Me-br3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yr0-Mo-HCV"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="RZ9-Vm-YUw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orN-OO-5SH">
+                                <rect key="frame" x="48" y="139" width="279" height="389"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bl7-uQ-tbJ">
+                                        <rect key="frame" x="32" y="59" width="88" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16B-qP-jOf">
+                                        <rect key="frame" x="32" y="113" width="88" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pts-8I-6WK">
+                                        <rect key="frame" x="32" y="164" width="88" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBU-L3-z9U">
+                                        <rect key="frame" x="168" y="59" width="80" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="681-ze-RH4">
+                                        <rect key="frame" x="168" y="106" width="80" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lD-Qe-bgH">
+                                        <rect key="frame" x="168" y="153" width="80" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOM-wW-Ny4">
+                                        <rect key="frame" x="79" y="248" width="120" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Dismiss">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismissTapped:" destination="sd5-dN-vhx" eventType="touchUpInside" id="kRQ-YK-byV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="costLabel" destination="5lD-Qe-bgH" id="R7u-nl-snD"/>
+                        <outlet property="descLabel" destination="681-ze-RH4" id="yDS-IV-lhp"/>
+                        <outlet property="storeLabel" destination="OBU-L3-z9U" id="BX2-Ur-ko1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="puq-od-M9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3101.5999999999999" y="777.66116941529242"/>
         </scene>
         <!--Budget-->
         <scene sceneID="fCx-Eh-K5U">
@@ -247,6 +331,7 @@
                         <outlet property="budgetLabel" destination="aYA-Nh-D2V" id="8Y4-di-evL"/>
                         <outlet property="incomeLabel" destination="Zff-66-aHQ" id="m6v-Gg-PH1"/>
                         <outlet property="walletTableView" destination="LVh-1s-eO5" id="ye5-2A-MiB"/>
+                        <segue destination="sd5-dN-vhx" kind="presentation" identifier="showExpenseSegue" id="2r6-ia-bJh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kcn-Ld-DaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,7 +359,7 @@
                                             <constraint firstAttribute="width" constant="96" id="rOk-AR-ejc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlS-1G-p3r">
@@ -284,7 +369,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="Enter">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="enterTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="r5n-2A-kMV"/>
@@ -303,14 +388,14 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelTapped:" destination="TQz-dI-74o" eventType="touchUpInside" id="X2s-Jp-5jh"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.8901960784313725" green="0.8666666666666667" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="lHW-xw-z6e" firstAttribute="centerY" secondItem="PkR-Z5-cNQ" secondAttribute="centerY" id="9F1-Ex-ELx"/>
                                     <constraint firstItem="GlS-1G-p3r" firstAttribute="top" secondItem="PkR-Z5-cNQ" secondAttribute="bottom" constant="45" id="BYq-RW-D3j"/>
@@ -360,7 +445,7 @@
                         <viewControllerLayoutGuide type="top" id="Xgf-AR-gy7"/>
                         <viewControllerLayoutGuide type="bottom" id="OPM-oP-sMe"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Z9m-Kj-Qn3">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Z9m-Kj-Qn3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -372,7 +457,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelTapped:" destination="cES-MY-nA6" eventType="touchUpInside" id="EVz-AF-34u"/>
@@ -389,14 +474,14 @@
                                         <rect key="frame" x="38" y="73" width="85" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF4-Ti-Peb">
                                         <rect key="frame" x="38" y="29" width="85" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzg-wn-YTg">
@@ -404,14 +489,14 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Enter">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="enterTapped:" destination="cES-MY-nA6" eventType="touchUpInside" id="uPZ-rt-Xqi"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.8901960784313725" green="0.8666666666666667" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.21694048713235295" green="0.21669634650735295" blue="0.21612668504901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cs-r6-qgU">
                                 <rect key="frame" x="213" y="165" width="99" height="30"/>
@@ -461,7 +546,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Enter">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="enterTapped:" destination="P8t-OV-zu7" eventType="touchUpInside" id="jZB-FF-sBE"/>
@@ -485,21 +570,21 @@
                                         <rect key="frame" x="15" y="48" width="103" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRA-Pb-Sir">
                                         <rect key="frame" x="15" y="99" width="92" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG4-FS-myA">
                                         <rect key="frame" x="15" y="8" width="92" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vyv-Iv-ST5">
@@ -514,14 +599,14 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelTapped:" destination="P8t-OV-zu7" eventType="touchUpInside" id="2hX-uL-8OR"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89019607840000003" green="0.86666666670000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -558,6 +643,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YJU-Br-BP1"/>
+        <segue reference="8Fp-KT-dbW"/>
     </inferredMetricsTieBreakers>
 </document>
