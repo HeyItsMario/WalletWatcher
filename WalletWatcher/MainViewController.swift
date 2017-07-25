@@ -29,6 +29,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         budgetTableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        budgetController.fetchBudgets()
+        budgetTableView.reloadData()
+        refreshMainIncomeLabel()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel?.text = budgetController.budgets[indexPath.row].title
@@ -37,12 +43,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return budgetController.budgets.count
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        budgetController.fetchBudgets()
-        budgetTableView.reloadData()
-        refreshMainIncomeLabel()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
