@@ -59,6 +59,12 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
             nextVC.expense = sender as? Expense
         }
         
+        if segue.identifier == "expenseSegue" {
+            let nextVC = segue.destination as! CreateExpenseModalViewController
+            nextVC.budget = budget
+        }
+        
+        
     }
     
     @IBAction func unwindToWalletView(segue:UIStoryboardSegue) {
