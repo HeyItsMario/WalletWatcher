@@ -7,6 +7,7 @@
     </entity>
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="cost" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="store" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="budget" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Budget" inverseName="expenses" inverseEntity="Budget" syncable="YES"/>
@@ -16,7 +17,7 @@
     </entity>
     <elements>
         <element name="Budget" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="Expense" positionX="162" positionY="-18" width="128" height="105"/>
+        <element name="Expense" positionX="162" positionY="-18" width="128" height="120"/>
         <element name="Income" positionX="54" positionY="18" width="128" height="60"/>
     </elements>
 </model>

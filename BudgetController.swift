@@ -78,9 +78,12 @@ final class BudgetController {
     func addExpense(amount: Decimal, store: String, description: String, budget: Budget) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let expense = Expense(context: context)
+        let date = Date()
+        
         expense.cost = amount as NSDecimalNumber
         expense.store = store
         expense.desc = description
+        expense.date = date as NSDate
         
         if let i = budgets.index(where: { $0 == budget }) {
             budgets[i].addToExpenses(expense)

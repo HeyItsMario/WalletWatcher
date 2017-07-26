@@ -34,8 +34,13 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = (budget?.expenses?[indexPath.row] as! Expense).store
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateStyle = .medium
+        let dateString = dateFormatter.string(from: (budget?.expenses?[indexPath.row] as! Expense).date! as Date)
+        cell.textLabel?.text = (budget?.expenses?[indexPath.row] as! Expense).store!
+        cell.detailTextLabel?.text = dateString
         return cell
     }
     
