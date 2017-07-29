@@ -13,6 +13,8 @@ class CreateBudgetModalViewController: UIViewController {
     @IBOutlet var incomeField: UITextField!
     @IBOutlet var titleField: UITextField!
     
+    let budgetController = BudgetController.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,15 +22,8 @@ class CreateBudgetModalViewController: UIViewController {
 
 
     @IBAction func enterTapped(_ sender: Any) {
-        
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let budget = Budget(context: context)
-        budget.title = titleField.text
-        budget.totalIncome = Decimal(string: incomeField.text!) as NSDecimalNumber?
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        budgetController.createBudget(title: titleField.text!, amount: incomeField.text!)
         performSegue(withIdentifier: "unwindToMainViewFromBudget", sender: self)
-        //performSegue(withIdentifier: "unwindSegueToMainView", sender: self)
-        
     }
 
     @IBAction func cancelTapped(_ sender: Any) {

@@ -32,12 +32,12 @@ class AddIncomeViewController: UIViewController {
         
         // Adding income from the main view which means it adds to total income
         if fromSegue == "mainIncome" {
-            budgetController.addIncome(amount: Decimal(string: incomeTextField.text!)!)
+            budgetController.addIncome(amount: NSDecimalNumber(string: incomeTextField.text!))
         }
         
         // Adding income from the wallet view which means it adds to the budget's total
         if fromSegue == "walletIncome" {
-            budgetController.addBudgetIncome(amount: Decimal(string: incomeTextField.text!)!, budget: budget!)
+            budgetController.addBudgetIncome(amount: NSDecimalNumber(string: incomeTextField.text!), budget: budget!)
         }
         
         

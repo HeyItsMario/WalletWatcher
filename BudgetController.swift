@@ -49,28 +49,19 @@ final class BudgetController {
         }
     }
     
-    private func addTwoNumbers(valueOne: NSDecimalNumber, valueTwo: Decimal ) -> NSDecimalNumber {
-        return valueOne.adding(valueTwo as NSDecimalNumber)
-    }
     
-    private func subTwoNumbers(valueOne: NSDecimalNumber, valueTwo: Decimal ) -> NSDecimalNumber {
-        return valueOne.subtracting(valueTwo as NSDecimalNumber)
-    }
-    
-    func addIncome(amount: Decimal) {
-        let newIncome = addTwoNumbers(valueOne: (totalIncome?.total)!, valueTwo: amount)
-        totalIncome?.total = newIncome
+    func addIncome(amount: NSDecimalNumber) {
+        totalIncome?.total = totalIncome?.total?.adding(amount)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        printIncome()
     }
     
-    func addBudgetIncome(amount: Decimal, budget: Budget) {
+    func addBudgetIncome(amount: NSDecimalNumber, budget: Budget) {
         let wallet: Budget?
-        let newIncome: NSDecimalNumber
         
         if let i = budgets.index(where: {$0 == budget}) {
             wallet = budgets[i]
-            newIncome = addTwoNumbers(valueOne: (wallet?.totalIncome)!, valueTwo: amount)
-            wallet?.totalIncome = newIncome
+            wallet?.totalIncome = wallet?.totalIncome?.adding(amount)
         }
         
         addIncome(amount: amount)
@@ -79,7 +70,7 @@ final class BudgetController {
         
     }
     
-    func addExpense(amount: Decimal, store: String, description: String, budget: Budget) {
+    func addExpense(amount: NSDecimalNumber, store: String, description: String, budget: Budget) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let expense = Expense(context: context)
         let date = Date()
@@ -91,8 +82,8 @@ final class BudgetController {
         
         if let i = budgets.index(where: { $0 == budget }) {
             budgets[i].addToExpenses(expense)
-            budgets[i].totalIncome = subTwoNumbers(valueOne: (budgets[i].totalIncome)!, valueTwo: amount)
-            totalIncome?.total = subTwoNumbers(valueOne: (totalIncome?.total)!, valueTwo: amount)
+            budgets[i].totalIncome = budgets[i].totalIncome?.subtracting(amount)
+            totalIncome?.total = totalIncome?.total?.subtracting(amount)
         } else {
             print("Error cannot find Budget in the Budget array")
         }
@@ -104,7 +95,7 @@ final class BudgetController {
     func deleteExpense(budget: Budget, expense: Expense) {
         budget.removeFromExpenses(expense)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        let amountToAddBack = expense.cost! as Decimal
+        let amountToAddBack = expense.cost! as NSDecimalNumber
         addBudgetIncome(amount: amountToAddBack, budget: budget)
         fetchBudgets()
     }
@@ -115,6 +106,21 @@ final class BudgetController {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         fetchBudgets()
     }
+    
+    func createBudget(title: String, amount: String) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let budget = Budget(context: context)
+        budget.title = title
+        budget.totalIncome = NSDecimalNumber(string: amount)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        addIncome(amount: (budget.totalIncome)!)
+        printIncome()
+    }
+    
+    private func printIncome() {
+        print("Total income: \(totalIncome!.total!.decimalValue)")
+    }
+    
     
 
 }

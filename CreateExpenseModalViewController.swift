@@ -23,9 +23,8 @@ class CreateExpenseModalViewController: UIViewController {
     }
 
     @IBAction func enterTapped(_ sender: Any) {
-        let cost = Decimal(string: costField.text!)
-        budgetController.addExpense(amount: cost!, store: storeField.text!, description: descriptionField.text!, budget: budget!)
-        
+        let cost = NSDecimalNumber(string: costField.text!)
+        budgetController.addExpense(amount: cost, store: storeField.text!, description: descriptionField.text!, budget: budget!)
         performSegue(withIdentifier: "unwindToWalletView", sender: self)
         
     }
