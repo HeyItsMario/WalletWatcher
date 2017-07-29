@@ -59,7 +59,7 @@ final class BudgetController {
     
     func addIncome(amount: Decimal) {
         let newIncome = addTwoNumbers(valueOne: (totalIncome?.total)!, valueTwo: amount)
-        totalIncome?.total! = newIncome
+        totalIncome?.total = newIncome
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
@@ -91,8 +91,8 @@ final class BudgetController {
         
         if let i = budgets.index(where: { $0 == budget }) {
             budgets[i].addToExpenses(expense)
-            budgets[i].totalIncome = NSDecimalNumber( value: (budgets[i].totalIncome?.doubleValue)! - (amount as NSDecimalNumber).doubleValue )
-            totalIncome?.total = NSDecimalNumber( value: (totalIncome?.total?.doubleValue)! - (amount as NSDecimalNumber).doubleValue )
+            budgets[i].totalIncome = subTwoNumbers(valueOne: (budgets[i].totalIncome)!, valueTwo: amount)
+            totalIncome?.total = subTwoNumbers(valueOne: (totalIncome?.total)!, valueTwo: amount)
         } else {
             print("Error cannot find Budget in the Budget array")
         }
