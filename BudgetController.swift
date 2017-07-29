@@ -49,24 +49,28 @@ final class BudgetController {
         }
     }
     
+    private func addTwoNumbers(valueOne: NSDecimalNumber, valueTwo: Decimal ) -> NSDecimalNumber {
+        return valueOne.adding(valueTwo as NSDecimalNumber)
+    }
+    
+    private func subTwoNumbers(valueOne: NSDecimalNumber, valueTwo: Decimal ) -> NSDecimalNumber {
+        return valueOne.subtracting(valueTwo as NSDecimalNumber)
+    }
+    
     func addIncome(amount: Decimal) {
-        print("Amoung to add back: \(amount)")
-        let newIncome = (totalIncome?.total?.doubleValue)! + (amount as NSDecimalNumber).doubleValue
-        let decimalIncome = Decimal(newIncome)
-        totalIncome?.total! = NSDecimalNumber(decimal: decimalIncome)
+        let newIncome = addTwoNumbers(valueOne: (totalIncome?.total)!, valueTwo: amount)
+        totalIncome?.total! = newIncome
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
     func addBudgetIncome(amount: Decimal, budget: Budget) {
         let wallet: Budget?
-        let newIncome: Double
-        let decimalIncome: Decimal
+        let newIncome: NSDecimalNumber
         
         if let i = budgets.index(where: {$0 == budget}) {
             wallet = budgets[i]
-            newIncome = (wallet?.totalIncome?.doubleValue)! + (amount as NSDecimalNumber).doubleValue
-            decimalIncome = Decimal(newIncome)
-            wallet?.totalIncome = NSDecimalNumber(decimal: decimalIncome)
+            newIncome = addTwoNumbers(valueOne: (wallet?.totalIncome)!, valueTwo: amount)
+            wallet?.totalIncome = newIncome
         }
         
         addIncome(amount: amount)
