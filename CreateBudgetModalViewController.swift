@@ -27,6 +27,8 @@ class CreateBudgetModalViewController: UIViewController {
         
         createBudgetFormView.layer.backgroundColor = UIColor.white.cgColor
         createBudgetFormView.layer.cornerRadius = 5.0
+        createBudgetFormView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        createBudgetFormView.layer.shadowOpacity = 0.9
         
         incomeField.layer.borderWidth = 1.0
         incomeField.layer.cornerRadius = 5.0

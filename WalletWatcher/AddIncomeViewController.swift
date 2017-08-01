@@ -28,6 +28,9 @@ class AddIncomeViewController: UIViewController {
         
         addIncomeFormView.layer.backgroundColor = UIColor.white.cgColor
         addIncomeFormView.layer.cornerRadius = 5.0
+        addIncomeFormView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        addIncomeFormView.layer.shadowOpacity = 0.9
+        
         
         incomeTextField.placeholder = "$0.00"
         incomeTextField.layer.borderWidth = 1.0

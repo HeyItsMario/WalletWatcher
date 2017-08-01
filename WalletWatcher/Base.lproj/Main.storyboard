@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p4J-py-QdF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p4J-py-QdF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,43 +25,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-th-hNd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="453"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="4JJ-oV-Gbf"/>
-                                    <constraint firstAttribute="height" constant="453" id="slh-nc-mLn"/>
-                                </constraints>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aW-hb-EYk">
-                                <rect key="frame" x="41" y="553" width="145" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="0jw-X9-y0F"/>
-                                    <constraint firstAttribute="height" constant="54" id="Lfh-Fp-wG3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Add Income">
-                                    <color key="titleColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="TQz-dI-74o" kind="presentation" identifier="addIncomeSegue" id="YJU-Br-BP1"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-YG-eTp">
-                                <rect key="frame" x="194" y="553" width="145" height="54"/>
+                                <rect key="frame" x="37" y="562" width="300" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="7SC-IU-7DM"/>
-                                    <constraint firstAttribute="width" constant="145" id="Ud0-0C-ZZR"/>
+                                    <constraint firstAttribute="height" constant="60" id="HRm-dG-Xmo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Create Wallet">
-                                    <color key="titleColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Create"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <integer key="value" value="1"/>
@@ -77,15 +48,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0r9-YG-eTp" firstAttribute="centerX" secondItem="vjh-ym-Hog" secondAttribute="centerX" constant="79" id="3V4-eS-6xc"/>
-                            <constraint firstItem="2aW-hb-EYk" firstAttribute="centerX" secondItem="vjh-ym-Hog" secondAttribute="centerX" constant="-74" id="EnA-92-yu3"/>
-                            <constraint firstAttribute="trailing" secondItem="fU1-th-hNd" secondAttribute="trailing" id="aG8-SB-bqV"/>
-                            <constraint firstItem="0r9-YG-eTp" firstAttribute="centerY" secondItem="vjh-ym-Hog" secondAttribute="centerY" constant="246.5" id="f6S-J5-J1h"/>
-                            <constraint firstItem="0r9-YG-eTp" firstAttribute="top" secondItem="fU1-th-hNd" secondAttribute="bottom" constant="36" id="gtb-za-PDF"/>
-                            <constraint firstItem="2aW-hb-EYk" firstAttribute="centerY" secondItem="vjh-ym-Hog" secondAttribute="centerY" constant="246.5" id="l5c-1f-YNS"/>
-                            <constraint firstItem="fU1-th-hNd" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leading" id="mjg-AN-EN8"/>
-                            <constraint firstItem="2aW-hb-EYk" firstAttribute="top" secondItem="fU1-th-hNd" secondAttribute="bottom" constant="36" id="mnV-iw-fHI"/>
-                            <constraint firstItem="fU1-th-hNd" firstAttribute="top" secondItem="fQd-cs-eEZ" secondAttribute="bottom" id="uZN-XU-5vT"/>
+                            <constraint firstItem="0r9-YG-eTp" firstAttribute="top" secondItem="fU1-th-hNd" secondAttribute="bottom" constant="45" id="6wV-R9-SQL"/>
+                            <constraint firstItem="fU1-th-hNd" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leading" id="Lbo-BS-xyZ"/>
+                            <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="0r9-YG-eTp" secondAttribute="bottom" constant="45" id="ULO-z5-45e"/>
+                            <constraint firstItem="0r9-YG-eTp" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leadingMargin" constant="21" id="XdO-UF-KBK"/>
+                            <constraint firstItem="fU1-th-hNd" firstAttribute="top" secondItem="fQd-cs-eEZ" secondAttribute="bottom" id="fpe-zf-Oz9"/>
+                            <constraint firstAttribute="trailing" secondItem="fU1-th-hNd" secondAttribute="trailing" id="vrr-c2-iY3"/>
+                            <constraint firstItem="fU1-th-hNd" firstAttribute="centerX" secondItem="0r9-YG-eTp" secondAttribute="centerX" id="yOQ-88-5tb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wallets" id="QKd-su-m4y">
@@ -96,9 +65,6 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixb-UH-9vY">
                                         <rect key="frame" x="-9" y="6" width="100" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="j8T-Vx-Zgl"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -106,14 +72,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Ixb-UH-9vY" firstAttribute="centerY" secondItem="eCI-wc-Djx" secondAttribute="centerY" id="EfZ-a3-5T8"/>
-                                    <constraint firstItem="Ixb-UH-9vY" firstAttribute="centerX" secondItem="eCI-wc-Djx" secondAttribute="centerX" id="Ffj-3K-1Lt"/>
+                                    <constraint firstItem="Ixb-UH-9vY" firstAttribute="leading" secondItem="eCI-wc-Djx" secondAttribute="leading" constant="-9" id="PQz-Hj-6Wa"/>
+                                    <constraint firstItem="Ixb-UH-9vY" firstAttribute="centerX" secondItem="eCI-wc-Djx" secondAttribute="centerX" id="mO2-8U-YhJ"/>
+                                    <constraint firstItem="Ixb-UH-9vY" firstAttribute="centerY" secondItem="eCI-wc-Djx" secondAttribute="centerY" id="mcY-us-aqL"/>
                                 </constraints>
                             </view>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addIncomeButton" destination="2aW-hb-EYk" id="ekq-Ae-3T6"/>
                         <outlet property="budgetTableView" destination="fU1-th-hNd" id="Kyd-av-Ufb"/>
                         <outlet property="createWalletButton" destination="0r9-YG-eTp" id="Gu8-X8-fKM"/>
                         <outlet property="mainIncome" destination="Ixb-UH-9vY" id="Vv0-Yq-wbd"/>
@@ -414,20 +380,6 @@
                                     <constraint firstItem="I6Q-MK-eat" firstAttribute="leading" secondItem="rYY-4W-dr7" secondAttribute="leading" constant="60" id="jya-Wt-5an"/>
                                     <constraint firstAttribute="trailing" secondItem="GlS-1G-p3r" secondAttribute="trailing" constant="60" id="xai-kJ-4PN"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="0.0" height="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -524,17 +476,6 @@
                                     <constraint firstItem="Gti-SC-fuy" firstAttribute="centerY" secondItem="KAL-TM-HPK" secondAttribute="centerY" constant="33.5" id="elK-zx-apm"/>
                                     <constraint firstItem="5cs-r6-qgU" firstAttribute="centerX" secondItem="KAL-TM-HPK" secondAttribute="centerX" id="f2P-9s-fD3"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="0.0" height="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -687,7 +628,4 @@
             <point key="canvasLocation" x="116" y="777.66116941529242"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="8Fp-KT-dbW"/>
-    </inferredMetricsTieBreakers>
 </document>
