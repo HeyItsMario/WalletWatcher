@@ -102,6 +102,8 @@ final class BudgetController {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         context.delete(budget)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        let amountToSubtract = budget.totalIncome?.multiplying(by: -1)
+        addIncome(amount: amountToSubtract!)
         fetchBudgets()
     }
     
