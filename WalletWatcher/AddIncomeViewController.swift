@@ -9,12 +9,13 @@
 import UIKit
 
 
-class AddIncomeViewController: UIViewController {
+class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var incomeTextField: UITextField!
     var budgetController = BudgetController.sharedInstance
     var budget: Budget? = nil
     var fromSegue:String? = nil
+    let themeColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
     
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -24,7 +25,7 @@ class AddIncomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let borderColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
+        incomeTextField.delegate = self
         
         addIncomeFormView.layer.backgroundColor = UIColor.white.cgColor
         addIncomeFormView.layer.cornerRadius = 5.0
@@ -35,21 +36,29 @@ class AddIncomeViewController: UIViewController {
         incomeTextField.placeholder = "$0.00"
         incomeTextField.layer.borderWidth = 1.0
         incomeTextField.layer.cornerRadius = 5.0
-        incomeTextField.layer.borderColor = borderColor.cgColor
+        incomeTextField.layer.borderColor = UIColor.lightGray.cgColor
         incomeTextField.attributedPlaceholder = NSAttributedString(string: incomeTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
         
-        enterButton.setTitleColor(borderColor, for: .normal)
+        enterButton.setTitleColor(themeColor, for: .normal)
         enterButton.layer.borderWidth = 1.0
         enterButton.layer.cornerRadius = 5.0
-        enterButton.layer.borderColor = borderColor.cgColor
+        enterButton.layer.borderColor = themeColor.cgColor
         
         
-        cancelButton.setTitleColor(borderColor, for: .normal)
+        cancelButton.setTitleColor(themeColor, for: .normal)
         cancelButton.layer.borderWidth = 1.0
         cancelButton.layer.cornerRadius = 5.0
-        cancelButton.layer.borderColor = borderColor.cgColor
+        cancelButton.layer.borderColor = themeColor.cgColor
         
 
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = themeColor.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.lightGray.cgColor
     }
 
     @IBAction func cancelTapped(_ sender: Any) {
