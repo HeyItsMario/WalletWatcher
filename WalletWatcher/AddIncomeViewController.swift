@@ -16,10 +16,36 @@ class AddIncomeViewController: UIViewController {
     var budget: Budget? = nil
     var fromSegue:String? = nil
     
+    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var addIncomeFormView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let borderColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
+        
+        addIncomeFormView.layer.backgroundColor = UIColor.white.cgColor
+        addIncomeFormView.layer.cornerRadius = 5.0
+        
+        incomeTextField.placeholder = "$0.00"
+        incomeTextField.layer.borderWidth = 1.0
+        incomeTextField.layer.cornerRadius = 5.0
+        incomeTextField.layer.borderColor = borderColor.cgColor
+        incomeTextField.attributedPlaceholder = NSAttributedString(string: incomeTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
+        
+        enterButton.setTitleColor(borderColor, for: .normal)
+        enterButton.layer.borderWidth = 1.0
+        enterButton.layer.cornerRadius = 5.0
+        enterButton.layer.borderColor = borderColor.cgColor
+        
+        
+        cancelButton.setTitleColor(borderColor, for: .normal)
+        cancelButton.layer.borderWidth = 1.0
+        cancelButton.layer.cornerRadius = 5.0
+        cancelButton.layer.borderColor = borderColor.cgColor
+        
 
     }
 

@@ -16,12 +16,29 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var budgetLabel: UINavigationItem!
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var walletTableView: UITableView!
+    @IBOutlet weak var addIncomeButton: UIButton!
+    @IBOutlet weak var addExpenseButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let borderColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
+        
+        addIncomeButton.layer.borderWidth = 1.0
+        addIncomeButton.layer.cornerRadius = 5.0
+        addIncomeButton.layer.borderColor = borderColor.cgColor
+        addIncomeButton.setTitleColor(borderColor, for: .normal)
+        
+        addExpenseButton.layer.borderWidth = 1.0
+        addExpenseButton.layer.cornerRadius = 5.0
+        addExpenseButton.layer.borderColor = borderColor.cgColor
+        addExpenseButton.setTitleColor(borderColor, for: .normal)
+        
+        
         walletTableView.delegate = self
         walletTableView.dataSource = self
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         walletTableView.reloadData()
