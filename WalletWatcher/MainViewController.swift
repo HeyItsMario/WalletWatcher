@@ -31,15 +31,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 20)!]
         navigationController?.navigationBar.tintColor = UIColor.white
         
-        let borderColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
-        let testColor = UIColor(red: 255/255, green: 194/255, blue: 18/255, alpha: 1 )
-//        addIncomeButton.layer.borderColor = borderColor.cgColor
-//        addIncomeButton.layer.borderWidth = 1.0
-//        addIncomeButton.setTitleColor(borderColor, for: .normal)
+        let themeColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
         
-        createWalletButton.layer.borderColor = testColor.cgColor
+        createWalletButton.layer.borderColor = themeColor.cgColor
         createWalletButton.layer.borderWidth = 1.0
-        createWalletButton.setTitleColor(testColor, for: .normal)
+        createWalletButton.setTitleColor(themeColor, for: .normal)
         
         budgetTableView.delegate = self
         budgetTableView.dataSource = self

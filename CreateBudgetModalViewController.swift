@@ -8,13 +8,13 @@
 
 import UIKit
 
-class CreateBudgetModalViewController: UIViewController {
+class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var incomeField: UITextField!
     @IBOutlet var titleField: UITextField!
     
     let budgetController = BudgetController.sharedInstance
-    
+    let themeColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
     
     @IBOutlet weak var createBudgetFormView: UIView!
     @IBOutlet weak var enterButton: UIButton!
@@ -23,7 +23,10 @@ class CreateBudgetModalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let borderColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
+        incomeField.delegate = self
+        titleField.delegate = self
+        
+        
         
         createBudgetFormView.layer.backgroundColor = UIColor.white.cgColor
         createBudgetFormView.layer.cornerRadius = 5.0
@@ -32,30 +35,36 @@ class CreateBudgetModalViewController: UIViewController {
         
         incomeField.layer.borderWidth = 1.0
         incomeField.layer.cornerRadius = 5.0
-        incomeField.layer.borderColor = borderColor.cgColor
+        incomeField.layer.borderColor = UIColor.lightGray.cgColor
         incomeField.attributedPlaceholder = NSAttributedString(string: incomeField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
         
         titleField.layer.borderWidth = 1.0
         titleField.layer.cornerRadius = 5.0
-        titleField.layer.borderColor = borderColor.cgColor
+        titleField.layer.borderColor = UIColor.lightGray.cgColor
         titleField.attributedPlaceholder = NSAttributedString(string: titleField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
         
         cancelButton.layer.borderWidth = 1.0
         cancelButton.layer.cornerRadius = 5.0
-        cancelButton.layer.borderColor = borderColor.cgColor
-        cancelButton.setTitleColor(borderColor, for: .normal)
+        cancelButton.layer.borderColor = themeColor.cgColor
+        cancelButton.setTitleColor(themeColor, for: .normal)
         
         enterButton.layer.borderWidth = 1.0
         enterButton.layer.cornerRadius = 5.0
-        enterButton.layer.borderColor = borderColor.cgColor
-        enterButton.setTitleColor(borderColor, for: .normal)
-        
-        
-        
-        
+        enterButton.layer.borderColor = themeColor.cgColor
+        enterButton.setTitleColor(themeColor, for: .normal)
+
     }
-
-
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = themeColor.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    
     @IBAction func enterTapped(_ sender: Any) {
         budgetController.createBudget(title: titleField.text!, amount: incomeField.text!)
         performSegue(withIdentifier: "unwindToMainViewFromBudget", sender: self)
@@ -66,3 +75,6 @@ class CreateBudgetModalViewController: UIViewController {
     }
     
 }
+
+
+
