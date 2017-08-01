@@ -79,6 +79,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func unwindToMainViewFromBudgetSegue(segue:UIStoryboardSegue) {
         budgetController.fetchBudgets()
         budgetTableView.reloadData()
+        refreshMainIncomeLabel()
     }
     
     @IBAction func unwindToMainViewSegue(segue:UIStoryboardSegue) {
