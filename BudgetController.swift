@@ -22,7 +22,6 @@ final class BudgetController {
     
     static let sharedInstance = BudgetController()
     
-    
     func fetchIncome() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
@@ -48,7 +47,6 @@ final class BudgetController {
             print("Error fetching Budgets")
         }
     }
-    
     
     func addIncome(amount: NSDecimalNumber) {
         totalIncome?.total = totalIncome?.total?.adding(amount)
@@ -120,7 +118,6 @@ final class BudgetController {
     private func printIncome() {
         print("Total income: \(totalIncome!.total!.decimalValue)")
     }
-    
     
 
 }

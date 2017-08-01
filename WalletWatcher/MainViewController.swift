@@ -16,15 +16,31 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var budgetTableView: UITableView!
     @IBOutlet var mainIncome: UILabel!
     
+    @IBOutlet weak var createWalletButton: UIButton!
+    
+    @IBOutlet weak var addIncomeButton: UIButton!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 20)!]
         navigationController?.navigationBar.tintColor = UIColor.white
+        
+        let borderColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
+        
+        addIncomeButton.layer.borderColor = borderColor.cgColor
+        addIncomeButton.layer.borderWidth = 1.0
+        addIncomeButton.setTitleColor(borderColor, for: .normal)
+        
+        createWalletButton.layer.borderColor = borderColor.cgColor
+        createWalletButton.layer.borderWidth = 1.0
+        createWalletButton.setTitleColor(borderColor, for: .normal)
+        
         budgetTableView.delegate = self
         budgetTableView.dataSource = self
     }
