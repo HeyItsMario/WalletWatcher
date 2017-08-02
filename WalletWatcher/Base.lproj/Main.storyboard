@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-th-hNd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="453"/>
+                                <rect key="frame" x="20" y="64" width="335" height="453"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-YG-eTp">
@@ -49,12 +49,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0r9-YG-eTp" firstAttribute="top" secondItem="fU1-th-hNd" secondAttribute="bottom" constant="45" id="6wV-R9-SQL"/>
-                            <constraint firstItem="fU1-th-hNd" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leading" id="Lbo-BS-xyZ"/>
+                            <constraint firstItem="fU1-th-hNd" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leading" constant="20" id="888-Xw-rNv"/>
                             <constraint firstItem="NHm-dS-UN4" firstAttribute="top" secondItem="0r9-YG-eTp" secondAttribute="bottom" constant="45" id="ULO-z5-45e"/>
                             <constraint firstItem="0r9-YG-eTp" firstAttribute="leading" secondItem="vjh-ym-Hog" secondAttribute="leadingMargin" constant="21" id="XdO-UF-KBK"/>
                             <constraint firstItem="fU1-th-hNd" firstAttribute="top" secondItem="fQd-cs-eEZ" secondAttribute="bottom" id="fpe-zf-Oz9"/>
-                            <constraint firstAttribute="trailing" secondItem="fU1-th-hNd" secondAttribute="trailing" id="vrr-c2-iY3"/>
                             <constraint firstItem="fU1-th-hNd" firstAttribute="centerX" secondItem="0r9-YG-eTp" secondAttribute="centerX" id="yOQ-88-5tb"/>
+                            <constraint firstAttribute="trailing" secondItem="fU1-th-hNd" secondAttribute="trailing" constant="20" id="zao-B4-JMF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Wallets" id="QKd-su-m4y">
@@ -83,6 +83,7 @@
                         <outlet property="budgetTableView" destination="fU1-th-hNd" id="Kyd-av-Ufb"/>
                         <outlet property="createWalletButton" destination="0r9-YG-eTp" id="Gu8-X8-fKM"/>
                         <outlet property="mainIncome" destination="Ixb-UH-9vY" id="Vv0-Yq-wbd"/>
+                        <outlet property="mainView" destination="vjh-ym-Hog" id="gJR-cp-WRU"/>
                         <segue destination="COw-Ax-z8g" kind="show" identifier="walletSegue" id="DbL-jA-658"/>
                     </connections>
                 </viewController>
