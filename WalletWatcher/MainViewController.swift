@@ -30,7 +30,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainView.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+        //mainView.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 20)!]
@@ -44,9 +44,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         budgetTableView.delegate = self
         budgetTableView.dataSource = self
-        budgetTableView.layer.masksToBounds = false
         budgetTableView.backgroundColor = UIColor.clear
-        
+        budgetTableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,39 +54,23 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         refreshMainIncomeLabel()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return budgetController.budgets.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacingHeight
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.clear
-        return headerView
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = budgetController.budgets[indexPath.section].title
-        cell.layer.cornerRadius = 5.0
-        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cell.layer.shadowOpacity = 0.9
+        cell.textLabel?.text = budgetController.budgets[indexPath.row].title
+        cell.textLabel?.textColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 //budgetController.budgets.count
+        return budgetController.budgets.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let budget = budgetController.budgets[indexPath.section]
+        let budget = budgetController.budgets[indexPath.row]
         performSegue(withIdentifier: "walletSegue", sender: budget)
     }
     
@@ -111,7 +94,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            budgetController.deleteBudget(budget: budgetController.budgets[indexPath.section])
+            budgetController.deleteBudget(budget: budgetController.budgets[indexPath.row])
             budgetTableView.reloadData()
             refreshMainIncomeLabel()
         }

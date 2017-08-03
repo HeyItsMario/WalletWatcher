@@ -37,6 +37,8 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         walletTableView.delegate = self
         walletTableView.dataSource = self
+        walletTableView.tableFooterView = UIView()
+        
     }
     
     
@@ -58,6 +60,8 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let dateString = dateFormatter.string(from: (budget?.expenses?[indexPath.row] as! Expense).date! as Date)
         cell.textLabel?.text = (budget?.expenses?[indexPath.row] as! Expense).store!
         cell.detailTextLabel?.text = dateString
+        cell.textLabel?.textColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
+        cell.detailTextLabel?.textColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
         return cell
     }
     
