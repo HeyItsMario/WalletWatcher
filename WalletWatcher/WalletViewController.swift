@@ -23,7 +23,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         let borderColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
-        
+
         addIncomeButton.layer.borderWidth = 1.0
         addIncomeButton.layer.cornerRadius = 5.0
         addIncomeButton.layer.borderColor = borderColor.cgColor
@@ -87,6 +87,11 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if segue.identifier == "expenseSegue" {
             let nextVC = segue.destination as! CreateExpenseModalViewController
+            nextVC.budget = budget
+        }
+        
+        if segue.identifier == "addIncomeSegue" {
+            let nextVC = segue.destination as! AddIncomeViewController
             nextVC.budget = budget
         }
         

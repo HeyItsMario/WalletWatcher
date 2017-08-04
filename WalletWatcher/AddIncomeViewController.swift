@@ -91,21 +91,10 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func enterTapped(_ sender: Any) {
-        
-        // Adding income from the main view which means it adds to total income
-        if fromSegue == "mainIncome" {
-            budgetController.addIncome(amount: NSDecimalNumber(string: incomeTextField.text!))
-        }
-        
         // Adding income from the wallet view which means it adds to the budget's total
-        if fromSegue == "walletIncome" {
-            budgetController.addBudgetIncome(amount: NSDecimalNumber(string: incomeTextField.text!), budget: budget!)
-        }
-        
-        
+        budgetController.addBudgetIncome(amount: NSDecimalNumber(string: incomeTextField.text!), budget: budget!)
         performSegue(withIdentifier: "unwindSegueToMainView", sender: self)
         
-    
     }
     
     func enableEnterButton(button: UIButton) {

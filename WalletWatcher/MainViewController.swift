@@ -75,20 +75,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "walletSegue" {
-            let nextVC = segue.destination as! WalletViewController
-            nextVC.budget = sender as? Budget
-
-        }
-        
-        if segue.identifier == "addIncomeSegue" {
-            let nextVC = segue.destination as! AddIncomeViewController
-            nextVC.budgetController = budgetController
-            nextVC.fromSegue = "mainIncome"
-
-        }
-        
+        let nextVC = segue.destination as! WalletViewController
+        nextVC.budget = sender as? Budget
         
     }
     
