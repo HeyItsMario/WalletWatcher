@@ -37,11 +37,13 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
         incomeField.layer.cornerRadius = 5.0
         incomeField.layer.borderColor = UIColor.lightGray.cgColor
         incomeField.attributedPlaceholder = NSAttributedString(string: incomeField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
+        incomeField.addTarget(self, action: #selector(valueChanged(sender:)), for: .editingChanged)
         
         titleField.layer.borderWidth = 1.0
         titleField.layer.cornerRadius = 5.0
         titleField.layer.borderColor = UIColor.lightGray.cgColor
         titleField.attributedPlaceholder = NSAttributedString(string: titleField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
+        titleField.addTarget(self, action: #selector(valueChanged(sender:)), for: .editingChanged)
         
         cancelButton.layer.borderWidth = 1.0
         cancelButton.layer.cornerRadius = 5.0
@@ -50,11 +52,26 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
         
         enterButton.layer.borderWidth = 1.0
         enterButton.layer.cornerRadius = 5.0
-        enterButton.layer.borderColor = themeColor.cgColor
-        enterButton.setTitleColor(themeColor, for: .normal)
+        disableEnterButton(button: enterButton)
 
     }
     
+    func valueChanged(sender: UITextField) {
+        if sender == titleField {
+            if sender.text! != "" && !incomeField.text!.isEmpty{
+                enableEnterButton(button: enterButton)
+            } else {
+                disableEnterButton(button: enterButton)
+            }
+            
+        }else {
+            if sender.text! != "" && !titleField.text!.isEmpty {
+                enableEnterButton(button: enterButton)
+            } else {
+                disableEnterButton(button: enterButton)
+            }
+        }
+    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = themeColor.cgColor
@@ -64,6 +81,30 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
         textField.layer.borderColor = UIColor.lightGray.cgColor
     }
     
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        if range.location == 0 && textField.text!.isEmpty == false {
+//            disableEnterButton(button: enterButton)
+//        }
+//        else if formComplete(range: range) {
+//            enableEnterButton(button: enterButton)
+//        }
+//        
+//        return true
+//    }
+    
+    
+    
+    func enableEnterButton(button: UIButton) {
+        button.isEnabled = true
+        button.layer.borderColor = themeColor.cgColor
+        button.setTitleColor(themeColor, for: .normal)
+    }
+    
+    func disableEnterButton(button: UIButton) {
+        button.isEnabled = false
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.setTitleColor(UIColor.lightGray, for: .normal)
+    }
     
     @IBAction func enterTapped(_ sender: Any) {
         budgetController.createBudget(title: titleField.text!, amount: incomeField.text!)

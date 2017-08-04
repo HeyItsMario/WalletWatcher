@@ -39,10 +39,12 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
         incomeTextField.layer.borderColor = UIColor.lightGray.cgColor
         incomeTextField.attributedPlaceholder = NSAttributedString(string: incomeTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
         
-        enterButton.setTitleColor(themeColor, for: .normal)
+        
+        
+        enterButton.setTitleColor(UIColor.lightGray, for: .normal)
         enterButton.layer.borderWidth = 1.0
         enterButton.layer.cornerRadius = 5.0
-        enterButton.layer.borderColor = themeColor.cgColor
+        disableEnterButton(button: enterButton)
         
         
         cancelButton.setTitleColor(themeColor, for: .normal)
@@ -53,12 +55,34 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    func valueChanged() {
+        print("test")
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = themeColor.cgColor
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // If the location is at 0 and the textfield is not empty this means
+        // that we had entered a value but then deleted it. textfield is now empty.
+        if range.location == 0 && textField.text!.isEmpty == false {
+            disableEnterButton(button: enterButton)
+        } else {
+            enableEnterButton(button: enterButton)
+        }
+        return true
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.lightGray.cgColor
+        
+        if !textField.text!.isEmpty {
+            enterButton.isEnabled = true
+            enterButton.setTitleColor(themeColor, for: .normal)
+            enterButton.layer.borderColor = themeColor.cgColor
+        }
+        
     }
 
     @IBAction func cancelTapped(_ sender: Any) {
@@ -84,7 +108,17 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     
     }
     
-
+    func enableEnterButton(button: UIButton) {
+        button.isEnabled = true
+        button.layer.borderColor = themeColor.cgColor
+        button.setTitleColor(themeColor, for: .normal)
+    }
+    
+    func disableEnterButton(button: UIButton) {
+        button.isEnabled = false
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.setTitleColor(UIColor.lightGray, for: .normal)
+    }
     
     
 }
