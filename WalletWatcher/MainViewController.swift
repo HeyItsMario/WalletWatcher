@@ -15,10 +15,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let cellSpacingHeight: CGFloat = 10
     let themeColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
     
-    @IBOutlet weak var budgetTableView: UITableView!
+    @IBOutlet weak var budgetTableView: UITableView! {
+        didSet {
+            budgetTableView.backgroundColor = UIColor.clear
+            budgetTableView.tableFooterView = UIView()
+        }
+    }
+    
     @IBOutlet var mainIncome: UILabel!
     
-    @IBOutlet weak var createWalletButton: UIButton!
+    @IBOutlet weak var createWalletButton: UIButton! {
+        didSet {
+            createWalletButton.layer.borderColor = themeColor.cgColor
+            createWalletButton.layer.borderWidth = 1.0
+            createWalletButton.setTitleColor(themeColor, for: .normal)
+        }
+    }
     
     @IBOutlet weak var addIncomeButton: UIButton!
     @IBOutlet var mainView: UIView!
@@ -29,23 +41,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //mainView.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-        
         navigationController?.navigationBar.barTintColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 20)!]
         navigationController?.navigationBar.tintColor = UIColor.white
         
-        
-        
-        createWalletButton.layer.borderColor = themeColor.cgColor
-        createWalletButton.layer.borderWidth = 1.0
-        createWalletButton.setTitleColor(themeColor, for: .normal)
-        
         budgetTableView.delegate = self
         budgetTableView.dataSource = self
-        budgetTableView.backgroundColor = UIColor.clear
-        budgetTableView.tableFooterView = UIView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

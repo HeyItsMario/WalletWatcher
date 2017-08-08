@@ -10,52 +10,66 @@ import UIKit
 
 class CreateExpenseModalViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var costField: UITextField!
-    @IBOutlet weak var storeField: UITextField!
-    @IBOutlet weak var descriptionField: UITextField!
-    
-    @IBOutlet weak var createExpenseFormView: UIView!
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var enterButton: UIButton!
-    
     var budget: Budget? = nil
     var budgetController = BudgetController.sharedInstance
     let themeColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
     
+    @IBOutlet weak var costField: UITextField! {
+        didSet {
+            costField.layer.borderWidth = 1.0
+            costField.layer.cornerRadius = 5.0
+            costField.layer.borderColor = UIColor.lightGray.cgColor
+        }
+    }
+    
+    @IBOutlet weak var storeField: UITextField! {
+        didSet {
+            storeField.layer.borderWidth = 1.0
+            storeField.layer.cornerRadius = 5.0
+            storeField.layer.borderColor = UIColor.lightGray.cgColor
+        }
+    }
+    
+    @IBOutlet weak var descriptionField: UITextField! {
+        didSet {
+            descriptionField.layer.borderWidth = 1.0
+            descriptionField.layer.cornerRadius = 5.0
+            descriptionField.layer.borderColor = UIColor.lightGray.cgColor
+        }
+    }
+    
+    @IBOutlet weak var createExpenseFormView: UIView! {
+        didSet {
+            createExpenseFormView.layer.backgroundColor = UIColor.white.cgColor
+            createExpenseFormView.layer.cornerRadius = 5.0
+            createExpenseFormView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+            createExpenseFormView.layer.shadowOpacity = 0.9
+        }
+    }
+    
+    @IBOutlet weak var cancelButton: UIButton! {
+        didSet {
+            cancelButton.layer.borderWidth = 1.0
+            cancelButton.layer.cornerRadius = 5.0
+            cancelButton.layer.borderColor = themeColor.cgColor
+            cancelButton.setTitleColor(themeColor, for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var enterButton: UIButton! {
+        didSet {
+            enterButton.layer.borderWidth = 1.0
+            enterButton.layer.cornerRadius = 5.0
+            enterButton.layer.borderColor = themeColor.cgColor
+            enterButton.setTitleColor(themeColor, for: .normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         costField.delegate = self
         storeField.delegate = self
         descriptionField.delegate = self
-        
-        costField.layer.borderWidth = 1.0
-        costField.layer.cornerRadius = 5.0
-        costField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        storeField.layer.borderWidth = 1.0
-        storeField.layer.cornerRadius = 5.0
-        storeField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        descriptionField.layer.borderWidth = 1.0
-        descriptionField.layer.cornerRadius = 5.0
-        descriptionField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        createExpenseFormView.layer.backgroundColor = UIColor.white.cgColor
-        createExpenseFormView.layer.cornerRadius = 5.0
-        createExpenseFormView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        createExpenseFormView.layer.shadowOpacity = 0.9
-        
-        cancelButton.layer.borderWidth = 1.0
-        cancelButton.layer.cornerRadius = 5.0
-        cancelButton.layer.borderColor = themeColor.cgColor
-        cancelButton.setTitleColor(themeColor, for: .normal)
-        
-        enterButton.layer.borderWidth = 1.0
-        enterButton.layer.cornerRadius = 5.0
-        enterButton.layer.borderColor = themeColor.cgColor
-        enterButton.setTitleColor(themeColor, for: .normal)
-        
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

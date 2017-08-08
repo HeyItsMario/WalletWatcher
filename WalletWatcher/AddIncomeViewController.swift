@@ -11,49 +11,54 @@ import UIKit
 
 class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var incomeTextField: UITextField!
+    
     var budgetController = BudgetController.sharedInstance
     var budget: Budget? = nil
     var fromSegue:String? = nil
     let themeColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
     
-    @IBOutlet weak var enterButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var addIncomeFormView: UIView!
+    @IBOutlet weak var incomeTextField: UITextField! {
+        didSet {
+            incomeTextField.placeholder = "$0.00"
+            incomeTextField.layer.borderWidth = 1.0
+            incomeTextField.layer.cornerRadius = 5.0
+            incomeTextField.layer.borderColor = UIColor.lightGray.cgColor
+            incomeTextField.attributedPlaceholder = NSAttributedString(string: incomeTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
+        }
+    }
+    
+    @IBOutlet weak var enterButton: UIButton! {
+        didSet {
+            enterButton.setTitleColor(UIColor.lightGray, for: .normal)
+            enterButton.layer.borderWidth = 1.0
+            enterButton.layer.cornerRadius = 5.0
+            disableEnterButton(button: enterButton)
+        }
+    }
+    
+    @IBOutlet weak var cancelButton: UIButton! {
+        didSet {
+            cancelButton.setTitleColor(themeColor, for: .normal)
+            cancelButton.layer.borderWidth = 1.0
+            cancelButton.layer.cornerRadius = 5.0
+            cancelButton.layer.borderColor = themeColor.cgColor
+        }
+    }
+    @IBOutlet weak var addIncomeFormView: UIView! {
+        didSet {
+            addIncomeFormView.layer.backgroundColor = UIColor.white.cgColor
+            addIncomeFormView.layer.cornerRadius = 5.0
+            addIncomeFormView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+            addIncomeFormView.layer.shadowOpacity = 0.9
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         incomeTextField.delegate = self
-        
-        addIncomeFormView.layer.backgroundColor = UIColor.white.cgColor
-        addIncomeFormView.layer.cornerRadius = 5.0
-        addIncomeFormView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        addIncomeFormView.layer.shadowOpacity = 0.9
-        
-        
-        incomeTextField.placeholder = "$0.00"
-        incomeTextField.layer.borderWidth = 1.0
-        incomeTextField.layer.cornerRadius = 5.0
-        incomeTextField.layer.borderColor = UIColor.lightGray.cgColor
-        incomeTextField.attributedPlaceholder = NSAttributedString(string: incomeTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
         incomeTextField.addTarget(self, action: #selector(valueChanged(sender:)), for: .editingChanged)
         
-        
-        
-        enterButton.setTitleColor(UIColor.lightGray, for: .normal)
-        enterButton.layer.borderWidth = 1.0
-        enterButton.layer.cornerRadius = 5.0
-        disableEnterButton(button: enterButton)
-        
-        
-        cancelButton.setTitleColor(themeColor, for: .normal)
-        cancelButton.layer.borderWidth = 1.0
-        cancelButton.layer.cornerRadius = 5.0
-        cancelButton.layer.borderColor = themeColor.cgColor
-        
-
     }
     
     func valueChanged(sender: UITextField) {

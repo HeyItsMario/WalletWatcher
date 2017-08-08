@@ -12,29 +12,32 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var budget: Budget? = nil
     var budgetController = BudgetController.sharedInstance
+    let themeColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
     
     @IBOutlet weak var budgetLabel: UINavigationItem!
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var walletTableView: UITableView!
-    @IBOutlet weak var addIncomeButton: UIButton!
-    @IBOutlet weak var addExpenseButton: UIButton!
+    
+    @IBOutlet weak var addIncomeButton: UIButton! {
+        didSet {
+            addIncomeButton.layer.borderWidth = 1.0
+            addIncomeButton.layer.cornerRadius = 5.0
+            addIncomeButton.layer.borderColor = themeColor.cgColor
+            addIncomeButton.setTitleColor(themeColor, for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var addExpenseButton: UIButton! {
+        didSet {
+            addExpenseButton.layer.borderWidth = 1.0
+            addExpenseButton.layer.cornerRadius = 5.0
+            addExpenseButton.layer.borderColor = themeColor.cgColor
+            addExpenseButton.setTitleColor(themeColor, for: .normal)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let borderColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
-
-        addIncomeButton.layer.borderWidth = 1.0
-        addIncomeButton.layer.cornerRadius = 5.0
-        addIncomeButton.layer.borderColor = borderColor.cgColor
-        addIncomeButton.setTitleColor(borderColor, for: .normal)
-        
-        addExpenseButton.layer.borderWidth = 1.0
-        addExpenseButton.layer.cornerRadius = 5.0
-        addExpenseButton.layer.borderColor = borderColor.cgColor
-        addExpenseButton.setTitleColor(borderColor, for: .normal)
-        
-        
         walletTableView.delegate = self
         walletTableView.dataSource = self
         walletTableView.tableFooterView = UIView()
