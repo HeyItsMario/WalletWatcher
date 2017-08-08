@@ -27,6 +27,7 @@ class CreateExpenseModalViewController: UIViewController, UITextFieldDelegate {
             storeField.layer.borderWidth = 1.0
             storeField.layer.cornerRadius = 5.0
             storeField.layer.borderColor = UIColor.lightGray.cgColor
+            storeField.autocapitalizationType = .words
         }
     }
     
@@ -35,6 +36,7 @@ class CreateExpenseModalViewController: UIViewController, UITextFieldDelegate {
             descriptionField.layer.borderWidth = 1.0
             descriptionField.layer.cornerRadius = 5.0
             descriptionField.layer.borderColor = UIColor.lightGray.cgColor
+            descriptionField.autocapitalizationType = .sentences
         }
     }
     
