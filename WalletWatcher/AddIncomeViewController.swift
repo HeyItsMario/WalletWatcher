@@ -82,7 +82,7 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func enterTapped(_ sender: Any) {
         incomeTextField.resignFirstResponder()
         budgetController.addBudgetIncome(amount: NSDecimalNumber(string: incomeTextField.text!), budget: budget!)
-        performSegue(withIdentifier: "unwindSegueToMainView", sender: self)
+        performSegue(withIdentifier: "unwindToWalletView", sender: self)
         
     }
     

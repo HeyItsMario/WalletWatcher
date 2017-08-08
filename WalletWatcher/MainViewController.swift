@@ -97,9 +97,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         refreshMainIncomeLabel()
     }
     
-    @IBAction func unwindToMainViewSegue(segue:UIStoryboardSegue) {
-        refreshMainIncomeLabel()
-    }
     
     func refreshMainIncomeLabel() {
         let formatter = NumberFormatter()
