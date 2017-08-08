@@ -71,7 +71,7 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.lightGray.cgColor
     }
-        
+    
     
     func enableEnterButton(button: UIButton) {
         button.isEnabled = true
@@ -86,11 +86,13 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func enterTapped(_ sender: Any) {
+        view.endEditing(false)
         budgetController.createBudget(title: titleField.text!, amount: incomeField.text!)
         performSegue(withIdentifier: "unwindToMainViewFromBudget", sender: self)
     }
 
     @IBAction func cancelTapped(_ sender: Any) {
+        view.endEditing(false)
         self.dismiss(animated: true, completion: nil)
     }
     

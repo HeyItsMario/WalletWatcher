@@ -38,6 +38,7 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
         incomeTextField.layer.cornerRadius = 5.0
         incomeTextField.layer.borderColor = UIColor.lightGray.cgColor
         incomeTextField.attributedPlaceholder = NSAttributedString(string: incomeTextField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.darkGray])
+        incomeTextField.addTarget(self, action: #selector(valueChanged(sender:)), for: .editingChanged)
         
         
         
@@ -55,35 +56,18 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
 
     }
     
-    func valueChanged() {
-        print("test")
+    func valueChanged(sender: UITextField) {
+        if sender.text! != "" && !incomeTextField.text!.isEmpty {
+            enableEnterButton(button: enterButton)
+        } else {
+            disableEnterButton(button: enterButton)
+        }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = themeColor.cgColor
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // If the location is at 0 and the textfield is not empty this means
-        // that we had entered a value but then deleted it. textfield is now empty.
-        if range.location == 0 && textField.text!.isEmpty == false {
-            disableEnterButton(button: enterButton)
-        } else {
-            enableEnterButton(button: enterButton)
-        }
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        if !textField.text!.isEmpty {
-            enterButton.isEnabled = true
-            enterButton.setTitleColor(themeColor, for: .normal)
-            enterButton.layer.borderColor = themeColor.cgColor
-        }
-        
-    }
 
     @IBAction func cancelTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -91,7 +75,7 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func enterTapped(_ sender: Any) {
-        // Adding income from the wallet view which means it adds to the budget's total
+        incomeTextField.resignFirstResponder()
         budgetController.addBudgetIncome(amount: NSDecimalNumber(string: incomeTextField.text!), budget: budget!)
         performSegue(withIdentifier: "unwindSegueToMainView", sender: self)
         
