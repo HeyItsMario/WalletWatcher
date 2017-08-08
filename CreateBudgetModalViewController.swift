@@ -57,19 +57,10 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
     }
     
     func valueChanged(sender: UITextField) {
-        if sender == titleField {
-            if sender.text! != "" && !incomeField.text!.isEmpty{
-                enableEnterButton(button: enterButton)
-            } else {
-                disableEnterButton(button: enterButton)
-            }
-            
-        }else {
-            if sender.text! != "" && !titleField.text!.isEmpty {
-                enableEnterButton(button: enterButton)
-            } else {
-                disableEnterButton(button: enterButton)
-            }
+        if sender.text! != "" && !incomeField.text!.isEmpty && !titleField.text!.isEmpty {
+            enableEnterButton(button: enterButton)
+        } else {
+            disableEnterButton(button: enterButton)
         }
     }
     
@@ -80,19 +71,7 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.lightGray.cgColor
     }
-    
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        if range.location == 0 && textField.text!.isEmpty == false {
-//            disableEnterButton(button: enterButton)
-//        }
-//        else if formComplete(range: range) {
-//            enableEnterButton(button: enterButton)
-//        }
-//        
-//        return true
-//    }
-    
-    
+        
     
     func enableEnterButton(button: UIButton) {
         button.isEnabled = true
