@@ -27,6 +27,26 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBOutlet var backgroundView: UIView! {
+        didSet {
+            backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = backgroundView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            backgroundView.addSubview(blurEffectView)
+            
+        }
+    }
+    
+    @IBOutlet var headerLabel: UILabel! {
+        didSet {
+            headerLabel.text = "Add Income"
+            headerLabel.textColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
+            headerLabel.addBottomBorderWithColor(color: UIColor.lightGray, width: 1)
+        }
+    }
+    
     @IBOutlet weak var enterButton: UIButton! {
         didSet {
             enterButton.setTitleColor(UIColor.lightGray, for: .normal)
@@ -47,17 +67,21 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addIncomeFormView: UIView! {
         didSet {
             addIncomeFormView.layer.backgroundColor = UIColor.white.cgColor
+            addIncomeFormView.alpha = 1
             addIncomeFormView.layer.cornerRadius = 5.0
             addIncomeFormView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
             addIncomeFormView.layer.shadowOpacity = 0.9
+            
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         incomeTextField.delegate = self
         incomeTextField.addTarget(self, action: #selector(valueChanged(sender:)), for: .editingChanged)
+        incomeTextField.becomeFirstResponder()
         
     }
     
@@ -75,6 +99,7 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     
 
     @IBAction func cancelTapped(_ sender: Any) {
+        incomeTextField.resignFirstResponder()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -99,4 +124,13 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+}
+
+extension UIView {
+    func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: frame.size.width, height: width)
+        self.layer.addSublayer(border)
+    }
 }
