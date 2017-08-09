@@ -11,8 +11,8 @@ import UIKit
 
 final class BudgetController {
 
-    var totalIncome:Income?
-    var budgets: [Budget] = []
+    private var totalIncome:Income?
+    private var budgets: [Budget] = []
     
     
     private init() {
@@ -22,7 +22,7 @@ final class BudgetController {
     
     static let sharedInstance = BudgetController()
     
-    func fetchIncome() {
+    private func fetchIncome() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
             if try (context.fetch(Income.fetchRequest())).count == 0 {
@@ -38,7 +38,7 @@ final class BudgetController {
         }
     }
     
-    func fetchBudgets() {
+    private func fetchBudgets() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
             budgets = try context.fetch(Budget.fetchRequest())
@@ -46,6 +46,22 @@ final class BudgetController {
         } catch {
             print("Error fetching Budgets")
         }
+    }
+    
+    func getTotalIncome() -> NSDecimalNumber {
+        return totalIncome!.total!
+    }
+    
+    func getBudget(at index: Int) -> Budget {
+        return budgets[index]
+    }
+    
+    func getBudgetCount() -> Int {
+        return budgets.count
+    }
+    
+    func getBudgetTitle(at index: Int) -> String {
+        return budgets[index].title!
     }
     
     func addIncome(amount: NSDecimalNumber) {
@@ -114,7 +130,7 @@ final class BudgetController {
         budget.totalIncome = NSDecimalNumber(string: amount)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         addIncome(amount: (budget.totalIncome)!)
-        printIncome()
+        fetchBudgets()
     }
     
     private func printIncome() {

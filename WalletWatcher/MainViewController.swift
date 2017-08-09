@@ -12,6 +12,7 @@ import UIKit
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var budgetController = BudgetController.sharedInstance
+    
     let cellSpacingHeight: CGFloat = 10
     let themeColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
     
@@ -51,7 +52,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        budgetController.fetchBudgets()
         budgetTableView.reloadData()
         refreshMainIncomeLabel()
     }
@@ -62,17 +62,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = budgetController.budgets[indexPath.row].title
+        cell.textLabel?.text = budgetController.getBudgetTitle(at: indexPath.row)
         cell.textLabel?.textColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return budgetController.budgets.count
+        return budgetController.getBudgetCount()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let budget = budgetController.budgets[indexPath.row]
+        let budget = budgetController.getBudget(at: indexPath.row)
         performSegue(withIdentifier: "walletSegue", sender: budget)
     }
     
@@ -85,14 +85,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            budgetController.deleteBudget(budget: budgetController.budgets[indexPath.row])
+            budgetController.deleteBudget(budget: budgetController.getBudget(at: indexPath.row))
             budgetTableView.reloadData()
             refreshMainIncomeLabel()
         }
     }
     
     @IBAction func unwindToMainViewFromBudgetSegue(segue:UIStoryboardSegue) {
-        budgetController.fetchBudgets()
         budgetTableView.reloadData()
         refreshMainIncomeLabel()
     }
@@ -100,7 +99,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func refreshMainIncomeLabel() {
         let formatter = NumberFormatter()
-        let income = (budgetController.totalIncome?.total)!
+        let income = budgetController.getTotalIncome()
         formatter.numberStyle = .currency
         mainIncome.text = formatter.string(from: income)
     }
