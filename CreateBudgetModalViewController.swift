@@ -13,6 +13,18 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
     let budgetController = BudgetController.sharedInstance
     let themeColor = UIColor(red: 28/255, green: 141/255, blue: 220/255, alpha: 1)
     
+    @IBOutlet var backgroundView: UIView! {
+        didSet {
+            backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = backgroundView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            backgroundView.insertSubview(blurEffectView, at: 0)
+            
+        }
+    }
+    
     @IBOutlet weak var createBudgetFormView: UIView! {
         didSet {
             createBudgetFormView.layer.backgroundColor = UIColor.white.cgColor
@@ -65,6 +77,7 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
         titleField.delegate = self
         incomeField.addTarget(self, action: #selector(valueChanged(sender:)), for: .editingChanged)
         titleField.addTarget(self, action: #selector(valueChanged(sender:)), for: .editingChanged)
+        titleField.becomeFirstResponder()
     }
     
     func valueChanged(sender: UITextField) {

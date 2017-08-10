@@ -29,12 +29,12 @@ class AddIncomeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var backgroundView: UIView! {
         didSet {
-            backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
             let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             blurEffectView.frame = backgroundView.bounds
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            backgroundView.addSubview(blurEffectView)
+            backgroundView.insertSubview(blurEffectView, at: 0)
             
         }
     }
@@ -134,3 +134,4 @@ extension UIView {
         self.layer.addSublayer(border)
     }
 }
+

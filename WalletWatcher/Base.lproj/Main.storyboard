@@ -467,6 +467,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="Z9m-Kj-Qn3" id="2QR-Zq-HF9"/>
                         <outlet property="cancelButton" destination="Gti-SC-fuy" id="NB7-rZ-yo2"/>
                         <outlet property="createBudgetFormView" destination="KAL-TM-HPK" id="NMw-rn-Q8S"/>
                         <outlet property="enterButton" destination="Mzg-wn-YTg" id="EkJ-zK-uZm"/>
@@ -545,6 +546,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="ghE-4K-1Ba" id="xv6-C5-s3A"/>
                         <outlet property="cancelButton" destination="akb-Iz-q6U" id="ZkN-em-k6B"/>
                         <outlet property="costField" destination="Vyv-Iv-ST5" id="TBF-Ac-LXB"/>
                         <outlet property="createExpenseFormView" destination="LOo-LF-QaP" id="Ck8-bi-TlY"/>
