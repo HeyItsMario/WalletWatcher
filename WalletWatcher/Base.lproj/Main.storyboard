@@ -398,10 +398,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAL-TM-HPK">
-                                <rect key="frame" x="24" y="134" width="327" height="203"/>
+                                <rect key="frame" x="77" y="115" width="221" height="182"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gti-SC-fuy">
-                                        <rect key="frame" x="76" y="119" width="75" height="32"/>
+                                        <rect key="frame" x="26" y="119" width="75" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="nme-O2-4te"/>
                                         </constraints>
@@ -414,7 +414,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KXO-zb-4zr">
-                                        <rect key="frame" x="76" y="70" width="175" height="30"/>
+                                        <rect key="frame" x="26" y="70" width="175" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="175" id="YLn-Y1-0AG"/>
                                         </constraints>
@@ -423,7 +423,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5cs-r6-qgU">
-                                        <rect key="frame" x="76.5" y="21" width="175" height="30"/>
+                                        <rect key="frame" x="26" y="21" width="175" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="175" id="5un-ZC-baC"/>
                                         </constraints>
@@ -432,7 +432,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzg-wn-YTg">
-                                        <rect key="frame" x="176" y="119" width="75" height="32"/>
+                                        <rect key="frame" x="126" y="119" width="75" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="75" id="en0-32-ir7"/>
                                         </constraints>
@@ -446,24 +446,23 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="KXO-zb-4zr" firstAttribute="centerX" secondItem="KAL-TM-HPK" secondAttribute="centerX" id="45r-99-5B1"/>
-                                    <constraint firstItem="KXO-zb-4zr" firstAttribute="centerY" secondItem="KAL-TM-HPK" secondAttribute="centerY" constant="-16.5" id="4Ud-eA-LYn"/>
-                                    <constraint firstItem="Mzg-wn-YTg" firstAttribute="centerY" secondItem="KAL-TM-HPK" secondAttribute="centerY" constant="33.5" id="5xg-ns-gQM"/>
-                                    <constraint firstItem="Gti-SC-fuy" firstAttribute="centerX" secondItem="KAL-TM-HPK" secondAttribute="centerX" constant="-50" id="7oC-ot-gmM"/>
-                                    <constraint firstItem="Mzg-wn-YTg" firstAttribute="centerX" secondItem="KAL-TM-HPK" secondAttribute="centerX" constant="50" id="OBF-IE-sFp"/>
-                                    <constraint firstItem="5cs-r6-qgU" firstAttribute="centerY" secondItem="KAL-TM-HPK" secondAttribute="centerY" constant="-65.5" id="bPH-lG-qJQ"/>
+                                    <constraint firstItem="Gti-SC-fuy" firstAttribute="baseline" secondItem="Mzg-wn-YTg" secondAttribute="baseline" id="9Nl-Mi-ya3"/>
+                                    <constraint firstItem="Gti-SC-fuy" firstAttribute="top" secondItem="KXO-zb-4zr" secondAttribute="bottom" constant="19" id="D46-Vh-fU2"/>
+                                    <constraint firstItem="5cs-r6-qgU" firstAttribute="leading" secondItem="Gti-SC-fuy" secondAttribute="leading" id="Rtr-7z-R0G"/>
                                     <constraint firstItem="KXO-zb-4zr" firstAttribute="top" secondItem="5cs-r6-qgU" secondAttribute="bottom" constant="19" id="c9c-62-P5V"/>
-                                    <constraint firstItem="Gti-SC-fuy" firstAttribute="centerY" secondItem="KAL-TM-HPK" secondAttribute="centerY" constant="33.5" id="elK-zx-apm"/>
-                                    <constraint firstItem="5cs-r6-qgU" firstAttribute="centerX" secondItem="KAL-TM-HPK" secondAttribute="centerX" id="f2P-9s-fD3"/>
+                                    <constraint firstItem="5cs-r6-qgU" firstAttribute="top" secondItem="KAL-TM-HPK" secondAttribute="top" constant="21" id="dEF-8A-v1O"/>
+                                    <constraint firstItem="5cs-r6-qgU" firstAttribute="leading" secondItem="KXO-zb-4zr" secondAttribute="leading" id="pup-wQ-OXg"/>
+                                    <constraint firstItem="5cs-r6-qgU" firstAttribute="trailing" secondItem="Mzg-wn-YTg" secondAttribute="trailing" id="sUW-ai-qKc"/>
+                                    <constraint firstItem="5cs-r6-qgU" firstAttribute="leading" secondItem="KAL-TM-HPK" secondAttribute="leading" constant="26" id="tgZ-bu-atr"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KAL-TM-HPK" firstAttribute="top" secondItem="Xgf-AR-gy7" secondAttribute="bottom" constant="114" id="AkE-75-70v"/>
-                            <constraint firstItem="OPM-oP-sMe" firstAttribute="top" secondItem="KAL-TM-HPK" secondAttribute="bottom" constant="330" id="Vfk-R8-KBP"/>
-                            <constraint firstItem="KAL-TM-HPK" firstAttribute="leading" secondItem="Z9m-Kj-Qn3" secondAttribute="leadingMargin" constant="8" id="VmA-bq-5wY"/>
-                            <constraint firstItem="KAL-TM-HPK" firstAttribute="centerX" secondItem="Z9m-Kj-Qn3" secondAttribute="centerX" id="sCx-wd-D0z"/>
+                            <constraint firstItem="KAL-TM-HPK" firstAttribute="leading" secondItem="Z9m-Kj-Qn3" secondAttribute="leadingMargin" constant="61" id="0s8-hB-kci"/>
+                            <constraint firstItem="KAL-TM-HPK" firstAttribute="top" secondItem="Xgf-AR-gy7" secondAttribute="bottom" constant="95" id="Pgf-ss-a45"/>
+                            <constraint firstItem="OPM-oP-sMe" firstAttribute="top" secondItem="KAL-TM-HPK" secondAttribute="bottom" constant="370" id="omS-U4-hO4"/>
+                            <constraint firstItem="KAL-TM-HPK" firstAttribute="centerX" secondItem="Z9m-Kj-Qn3" secondAttribute="centerX" id="wHc-VG-AI2"/>
                         </constraints>
                     </view>
                     <connections>

@@ -16,7 +16,7 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var backgroundView: UIView! {
         didSet {
             backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             blurEffectView.frame = backgroundView.bounds
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -29,7 +29,7 @@ class CreateBudgetModalViewController: UIViewController, UITextFieldDelegate {
         didSet {
             createBudgetFormView.layer.backgroundColor = UIColor.white.cgColor
             createBudgetFormView.layer.cornerRadius = 5.0
-            createBudgetFormView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+            createBudgetFormView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
             createBudgetFormView.layer.shadowOpacity = 0.9
         }
     }

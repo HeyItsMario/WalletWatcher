@@ -61,9 +61,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel?.text = budgetController.getBudgetTitle(at: indexPath.row)
         cell.textLabel?.textColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
+        let percent = budgetController.getBudgetPercent(at: indexPath.row)
+        cell.detailTextLabel?.text = "\(percent) of your total income."
+        cell.detailTextLabel?.textColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 1)
         return cell
     }
     

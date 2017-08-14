@@ -64,6 +64,13 @@ final class BudgetController {
         return budgets[index].title!
     }
     
+    func getBudgetPercent(at index: Int) -> String {
+        let percent = budgets[index].totalIncome!.dividing(by: totalIncome!.total!)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        return formatter.string(from: percent)!
+    }
+    
     func addIncome(amount: NSDecimalNumber) {
         totalIncome?.total = totalIncome?.total?.adding(amount)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
