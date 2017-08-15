@@ -43,7 +43,7 @@ class CreateExpenseModalViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var backgroundView: UIView! {
         didSet {
             backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             blurEffectView.frame = backgroundView.bounds
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

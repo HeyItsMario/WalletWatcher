@@ -15,11 +15,25 @@ class ExpenseDetailViewController: UIViewController {
             storeLabel.text = expense?.store
         }
     }
-    @IBOutlet weak var descLabel: UILabel! {
+    
+    @IBOutlet var descriptionText: UITextView! {
         didSet {
-            descLabel.text = expense?.desc
+            descriptionText.text = expense?.desc
         }
     }
+    
+    @IBOutlet var backgroundView: UIView! {
+        didSet {
+            backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = backgroundView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            backgroundView.insertSubview(blurEffectView, at: 0)
+            
+        }
+    }
+
     @IBOutlet weak var costLabel: UILabel! {
         didSet {
             costLabel.text = "$\((expense?.cost)!)"
@@ -29,7 +43,7 @@ class ExpenseDetailViewController: UIViewController {
         didSet {
             detailView.layer.backgroundColor = UIColor.white.cgColor
             detailView.layer.cornerRadius = 5.0
-            detailView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+            detailView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
             detailView.layer.shadowOpacity = 0.9
         }
     }
