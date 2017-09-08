@@ -48,12 +48,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         budgetTableView.delegate = self
         budgetTableView.dataSource = self
+
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         budgetTableView.reloadData()
         refreshMainIncomeLabel()
+        if !(budgetController.getBudgetCount() == 0) {
+            let index = IndexPath(item: budgetController.getBudgetCount() - 1, section: 0)
+            budgetTableView.scrollToRow(at: index, at: UITableViewScrollPosition.bottom, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

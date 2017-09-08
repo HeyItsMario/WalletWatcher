@@ -49,6 +49,10 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         walletTableView.reloadData()
         budgetLabel.title = "\((budget?.title)!) Wallet"
         refreshBudgetIncomeLabel()
+        if !(getExpenseCount() == 0) {
+            let index = IndexPath(item: getExpenseCount() - 1, section: 0)
+            walletTableView.scrollToRow(at: index, at: UITableViewScrollPosition.bottom, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
