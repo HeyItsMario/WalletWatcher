@@ -140,5 +140,4 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         incomeLabel.text = formatter.string(from: income)
     }
 
-
 }
